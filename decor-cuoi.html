@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial: Nghệ thuật Không gian Cưới Premium | LỤC HỶ Wedding</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ================= GIỮ NGUYÊN CSS CHO HERO V2 (BẮT BUỘC) ================= */
+        .magazine-hero-v2 { height: 75vh; background-color: #f9f9f9; display: flex; align-items: center; padding: 0 10%; position: relative; overflow: hidden; }
+        .hero-v2-img { position: absolute; right: 0; top: 0; width: 60%; height: 100%; object-fit: cover; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%); }
+        .hero-v2-text { width: 50%; z-index: 2; padding-right: 50px; }
+        .hero-v2-text h1 { font-size: 3.5rem; line-height: 1.2; margin: 20px 0; font-family: 'Playfair Display', serif; }
+
+        @media (max-width: 992px) {
+            .hero-v2-img { width: 100%; opacity: 0.3; clip-path: none; }
+            .hero-v2-text { width: 100%; text-align: center; padding-right: 0;}
+            .hero-v2-text h1 { font-size: 2.5rem; }
+        }
+
+        /* ================= CSS MỚI: MAGAZINE PREMIUM (VERTICAL EDITORIAL) ================= */
+        body { background-color: #fcfbf9; overflow-x: hidden; color: #333; }
+        header { position: sticky; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(15px); background: rgba(252, 251, 249, 0.85); border-bottom: 1px solid rgba(184, 149, 100, 0.1);}
+
+        .premium-container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+        
+        .article-intro { max-width: 850px; margin: 120px auto; text-align: justify; font-size: 1.15rem; line-height: 2; color: #444; }
+        .dropcap::first-letter { font-size: 4.5rem; float: left; margin-right: 15px; margin-top: 5px; color: #b89564; font-family: 'Playfair Display', serif; line-height: 0.8; font-weight: bold; }
+
+        .chapter-title { text-align: center; margin: 150px 0 80px 0; }
+        .chapter-title h6 { color: #b89564; letter-spacing: 5px; margin-bottom: 15px; text-transform: uppercase; font-weight: 600; font-size: 0.85rem;}
+        .chapter-title h2 { font-size: 3rem; font-family: 'Playfair Display', serif; position: relative; display: inline-block; padding-bottom: 10px; }
+        .chapter-title .divider { width: 1px; height: 60px; background-color: #b89564; margin: 0 auto 30px auto; }
+        
+        .editorial-row { display: flex; align-items: center; gap: 80px; margin-bottom: 150px; }
+        .editorial-row:nth-child(even) { flex-direction: row-reverse; }
+
+        .image-col { flex: 1.3; height: 600px; position: relative; z-index: 1; }
+        .image-col img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95); transition: 2s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-radius: 4px;}
+        .editorial-row:hover .image-col img { transform: scale(1.03); filter: brightness(1); }
+        .image-col::after { content: ''; position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(255,255,255,0.4); z-index: 2; pointer-events: none; transition: 0.5s; }
+        .editorial-row:hover .image-col::after { top: 15px; left: 15px; right: 15px; bottom: 15px; border-color: rgba(255,255,255,0.7); }
+
+        .text-col { flex: 1; position: relative; z-index: 2; margin-left: -5%; background: #fff; padding: 60px 50px; box-shadow: 0 30px 60px rgba(0,0,0,0.04); }
+        .editorial-row:nth-child(even) .text-col { margin-left: 0; margin-right: -5%; }
+
+        .text-col h3 { font-size: 2.2rem; margin-bottom: 20px; color: #111; font-family: 'Playfair Display', serif; font-weight: 500; }
+        .text-col p { color: #555; line-height: 1.9; margin-bottom: 30px; font-size: 1.05rem; font-weight: 300; text-align: justify; }
+        .concept-tag { display: inline-block; font-family: 'Playfair Display', serif; font-style: italic; color: #b89564; font-size: 1.2rem; margin-bottom: 15px; }
+
+        .elegant-list { list-style: none; padding: 0; margin-top: 20px; border-top: 1px solid #f0e9df; }
+        .elegant-list li { border-bottom: 1px solid #f0e9df; padding: 18px 0 18px 25px; font-size: 0.95rem; color: #444; position: relative; line-height: 1.6; }
+        .elegant-list li::before { content: ''; position: absolute; left: 0; top: 26px; width: 6px; height: 6px; background: transparent; border: 1px solid #b89564; transform: rotate(45deg); }
+
+        /* ================= CSS MỚI: DUAL IMAGE GRID (Chống mờ ảnh) ================= */
+        .dual-image-wrapper { display: flex; gap: 30px; margin: 100px 0 20px 0; width: 100%; }
+        .dual-image-wrapper .img-box { flex: 1; height: 65vh; overflow: hidden; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .dual-image-wrapper .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s ease; filter: brightness(0.95); }
+        .dual-image-wrapper:hover .img-box img { transform: scale(1.03); filter: brightness(1); }
+
+        .caption { text-align: right; font-size: 0.85rem; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 80px; }
+
+        .end-quote { max-width: 800px; margin: 150px auto; text-align: center; }
+        .end-quote p { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-style: italic; color: #222; line-height: 1.4; }
+        .end-quote span { display: block; margin-top: 30px; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #b89564; }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 992px) {
+            .premium-container { padding: 0 5%; }
+            .article-intro { margin: 80px auto; text-align: justify; }
+            .chapter-title { margin: 100px 0 50px 0; }
+            .chapter-title h2 { font-size: 2.2rem;}
+            
+            .editorial-row, .editorial-row:nth-child(even) { flex-direction: column; margin-bottom: 80px; }
+            .image-col { width: 100%; height: 400px; }
+            .text-col, .editorial-row:nth-child(even) .text-col { width: 90%; margin-left: 0; margin-right: 0; margin-top: -60px; padding: 40px 30px; text-align: center; }
+            .elegant-list li { text-align: left; }
+            .end-quote p { font-size: 1.8rem; }
+            
+            /* Responsive cho cụm 2 ảnh */
+            .dual-image-wrapper { flex-direction: column; gap: 20px; }
+            .dual-image-wrapper .img-box { height: 400px; }
+            .caption { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LỤC HỶ WEDDING</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                <li class="dropdown">
+                    <a href="dich-vu.html" class="active gold-text fw-bold">Dịch vụ <span>▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="decor-cuoi.html">Decor Cưới</a></li>
+                        <li><a href="san-khau-cuoi.html">Sân Khấu Cưới</a></li>
+                        <li><a href="trang-tri-gia-tien.html">Trang Trí Gia Tiên</a></li>
+                        <li><a href="sinh-le-cuoi.html">Sính Lễ Cưới</a></li>
+                        <li><a href="cong-cuoi.html">Cổng Cưới</a></li>
+                    </ul>
+                </li>
+                <li><a href="album.html">ALBUM</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="magazine-hero-v2">
+        <div class="hero-v2-text" data-aos="fade-right">
+            <h6 class="gold-text text-uppercase fw-bold" style="letter-spacing: 5px;">Editorial Collection</h6>
+            <h1>Bản Giao Hưởng <br> Mọi Không Gian</h1>
+            <p>"Nơi sự tinh tế gặp gỡ giá trị thực."</p>
+        </div>
+        <img src="images/DecorCuoi/hoa.jpg" class="hero-v2-img" alt="Cover Image">
+    </section>
+
+    <main class="article-intro" data-aos="fade-up">
+        <p><span class="dropcap">Đ</span>ể ngày cưới thực sự trở thành một dấu ấn khó phai, không gian tổ chức chính là lớp nền hoàn hảo nhất để tôn vinh cảm xúc. Tại LỤC HỶ Wedding, chúng tôi cung cấp dịch vụ trang trí trọn gói, được thiết kế và may đo riêng biệt cho đa dạng địa hình tổ chức. Từ sự lộng lẫy, chuẩn mực của các sảnh tiệc nhà hàng cho đến vẻ đẹp lãng mạn, phóng khoáng của những không gian ngoài trời, chúng tôi luôn có những giải pháp kiến tạo không gian thông minh, mang tính thẩm mỹ cao và tối ưu nhất với ngân sách của bạn.</p>
+    </main>
+
+    <div class="premium-container">
+        
+        <div class="chapter-title" data-aos="fade-up">
+            <div class="divider"></div>
+            <h6>Part 01 : Indoor Wedding</h6>
+            <h2>Nghệ Thuật Trang Trí Sảnh Tiệc</h2>
+        </div>
+
+        <section class="editorial-row" data-aos="fade-up">
+            <div class="image-col">
+                <img src="images/DecorCuoi/anhcuoi1.jpg" alt="Trang trí sảnh tiệc">
+            </div>
+            <div class="text-col">
+                <span class="concept-tag">The Architecture of Space</span>
+                <h3>Làm chủ không gian trong nhà</h3>
+                <p>Trang trí tiệc trong nhà (Indoor Decor) đòi hỏi khả năng biến hóa để che đi những khuyết điểm kiến trúc sẵn có và tôn lên vẻ đẹp lộng lẫy. LỤC HỶ mang đến các thiết kế đa dạng từ thanh lịch, tinh giản đến nguy nga, tráng lệ. Bằng cách kết hợp linh hoạt các chất liệu (hoa lụa cao cấp, mica, vách CNC nghệ thuật) cùng hệ thống ánh sáng chuyên nghiệp, chúng tôi biến mọi sảnh tiệc thành một lễ đường mang đậm dấu ấn cá nhân.</p>
+                
+                <ul class="elegant-list">
+                    <li><b>Khu Vực Đón Khách:</b> Cổng chào nghệ thuật, Bàn Gallery lưu niệm, Backdrop check-in 3D.</li>
+                    <li><b>Khu Vực Lễ Đường:</b> Sân khấu trung tâm đa tầng, lối đi (Aisle) trải thảm hoa.</li>
+                    <li><b>Hiệu Ứng Nâng Cao:</b> Đèn Spotlight đánh khối, phông màn sao, khói lạnh bồng bềnh.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="dual-image-wrapper" data-aos="fade-up">
+            <div class="img-box">
+                <img src="images/DecorCuoi/nhahang.jpg" alt="Lễ đường nhà hàng 1">
+            </div>
+            <div class="img-box">
+                <img src="images/DecorCuoi/leduong2.jpg" alt="Lễ đường nhà hàng 2">
+            </div>
+        </div>
+        <div class="caption" data-aos="fade-left">Sự kết hợp hoàn hảo giữa kiến trúc không gian và nghệ thuật sắp đặt hoa.</div>
+
+        <div class="chapter-title" data-aos="fade-up">
+            <div class="divider"></div>
+            <h6>Part 02 : Outdoor Wedding</h6>
+            <h2>Sự Phóng Khoáng Của Tiệc Ngoài Trời</h2>
+        </div>
+
+        <section class="editorial-row" data-aos="fade-up">
+            <div class="image-col">
+                <img src="images/DecorCuoi/luatrang.jpg" alt="Tiệc ngoài trời">
+            </div>
+            <div class="text-col">
+                <span class="concept-tag">Nature & Romance</span>
+                <h3>Hòa quyện cùng thiên nhiên</h3>
+                <p>Dành cho những cặp đôi yêu thích sự tự do, tiệc ngoài trời mang lại cảm giác lãng mạn tuyệt đối. Điểm mạnh của LỤC HỶ nằm ở kỹ thuật thi công vững chắc, đảm bảo an toàn trước mọi thời tiết. Chúng tôi ứng dụng đa dạng phong cách: từ những thiết kế hoa độc đáo, rạp lụa bay bổng đến các chi tiết mộc mạc mang hơi hướng Rustic, tạo nên một bữa tiệc hòa hợp hoàn hảo với cảnh quan.</p>
+                
+                <ul class="elegant-list">
+                    <li><b>Khu Vực Làm Lễ:</b> Cổng hoa vòm/mở (Arch), không gian bục đứng giữa thiên nhiên.</li>
+                    <li><b>Không Gian Tiệc & Chụp Hình:</b> Cụm decor tự do, góc Sofa nghệ thuật.</li>
+                    <li><b>Hệ Thống Rạp & Ánh Sáng:</b> Khung rạp lụa, giăng đèn đom đóm (Fairy lights) thắp sáng.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="dual-image-wrapper" data-aos="fade-up">
+            <div class="img-box">
+                <img src="images/DecorCuoi/canhbien1.jpg" alt="Cảnh biển 1">
+            </div>
+            <div class="img-box">
+                <img src="images/DecorCuoi/canhbien2.jpg" alt="Cảnh biển 2">
+            </div>
+        </div>
+        <div class="caption" data-aos="fade-left">Nét lãng mạn và tự do của không gian tiệc cưới ngoài trời.</div>
+
+        <div class="end-quote" data-aos="zoom-in">
+            <p>"Sự hoàn mỹ của một đám cưới bắt nguồn từ sự thấu hiểu mặt bằng và khả năng kiến tạo nên những giới hạn nghệ thuật mới."</p>
+            <span>— Lục Hỷ Design Team</span>
+        </div>
+
+    </div> <section style="text-align: center; padding: 120px 5%; background-color: #fff; border-top: 1px solid #f0e9df;">
+        <div data-aos="zoom-in" style="max-width: 600px; margin: 0 auto;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 25px; font-family: 'Playfair Display', serif; color: #111;">Bạn đã chọn được địa điểm tổ chức?</h2>
+            <p style="color: #666; font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; font-weight: 300;">
+                Hãy chia sẻ cùng chúng tôi mặt bằng và ý tưởng của bạn. LỤC HỶ sẽ tư vấn giải pháp, lên phối cảnh và báo giá tối ưu nhất cho không gian ngày trọng đại.
+            </p>
+            <a href="lien-he.html" class="btn-gold" style="padding: 15px 40px; letter-spacing: 2px; font-size: 0.85rem;">NHẬN TƯ VẤN NGAY</a>
+        </div>
+    </section>
+
+    <!-- ================= KHỐI LIÊN HỆ CHUNG ================= -->
+    <section class="home-contact">
+        <div class="contact-wrapper">
+            <h2>Hãy để chúng tôi viết tiếp câu chuyện của bạn</h2>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <h4>Địa chỉ</h4>
+                    <p>123 Đường ABC, Quận X<br>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hotline</h4>
+                    <p>092 224 69 80</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hello@luchywedding.com</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1CNEzh7YvL/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="lien-he.html" class="btn-outline-gold" data-aos="fade-up" data-aos-delay="400">Trò chuyện với chúng tôi</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= END KHỐI LIÊN HỆ ================= -->
+
+    <!-- Thẻ footer gốc luôn nằm ở dưới cùng -->
+    <footer>
+        <p>© 2026 LỤC HỶ WEDDING STORYTELLER - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 150 });
+    </script>
+</body>
+</html>

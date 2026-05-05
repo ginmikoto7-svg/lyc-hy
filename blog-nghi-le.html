@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ý Nghĩa Các Nghi Lễ Truyền Thống Trong Đám Cưới Việt | LỤC HỶ Wedding Blog</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ================= CSS TỔNG THỂ ================= */
+        body { background-color: #fcfbf9; color: #333; font-family: 'Montserrat', sans-serif; margin: 0; line-height: 1.6; }
+        header { position: sticky; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(15px); background: rgba(252, 251, 249, 0.85); border-bottom: 1px solid rgba(184, 149, 100, 0.1);}
+
+        /* BREADCRUMB */
+        .breadcrumb { padding: 40px 5% 0 5%; max-width: 1200px; margin: 0 auto; font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .breadcrumb a { color: #b89564; text-decoration: none; transition: 0.3s; }
+        .breadcrumb a:hover { color: #111; }
+
+        /* ================= LAYOUT BLOG (CHIA 2 CỘT: CHÍNH & SIDEBAR) ================= */
+        .blog-container { display: flex; gap: 60px; max-width: 1200px; margin: 40px auto 100px auto; padding: 0 5%; }
+        
+        /* CỘT NỘI DUNG CHÍNH (TRÁI) */
+        .blog-main { flex: 7; width: 100%; }
+        
+        .blog-header { margin-bottom: 40px; }
+        .blog-category { display: inline-block; font-size: 0.8rem; background: #b89564; color: #fff; padding: 5px 15px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; border-radius: 2px;}
+        .blog-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1.25; color: #1a1a1a; margin-bottom: 20px; }
+        .blog-meta { font-size: 0.9rem; color: #888; display: flex; align-items: center; gap: 20px; }
+        .blog-meta i { color: #b89564; margin-right: 5px; }
+
+        .blog-featured-img { width: 100%; height: auto; max-height: 550px; object-fit: cover; border-radius: 4px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        .blog-content { font-size: 1.1rem; line-height: 1.9; color: #444; font-weight: 300; text-align: justify; }
+        .blog-content p { margin-bottom: 25px; }
+        
+        /* Chỉnh style riêng cho các tiêu đề (Đính hôn, Vu quy...) */
+        .blog-content h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.8rem; 
+            color: #b89564; 
+            margin: 50px 0 20px 0; 
+            border-bottom: 1px dashed #e0dcd3;
+            padding-bottom: 10px;
+        }
+        
+        /* ẢNH CHÈN TRONG NỘI DUNG */
+        .blog-image-group { margin: 40px 0; }
+        .blog-image-in-content { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        .blog-image-caption { font-size: 0.9rem; color: #888; text-align: center; font-style: italic; display: block; }
+
+        /* KHỐI TRÍCH DẪN NỔI BẬT */
+        .blog-quote { font-family: 'Playfair Display', serif; font-size: 1.4rem; text-align: center; color: #1a1a1a; font-style: italic; margin: 50px 0; padding: 30px; line-height: 1.6; border: 1px solid #b89564; background-color: #fff;}
+
+        .blog-tags { margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .tag { font-size: 0.8rem; background: #eee; color: #555; padding: 6px 15px; border-radius: 20px; text-decoration: none; transition: 0.3s; }
+        .tag:hover { background: #b89564; color: #fff; }
+
+        /* CỘT SIDEBAR (PHẢI) */
+        .blog-sidebar { flex: 3; max-width: 350px; }
+        
+        .widget { background: #fff; padding: 30px; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); margin-bottom: 40px; border: 1px solid #f0eee9;}
+        .widget-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1a1a1a; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .widget-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background: #b89564; }
+        
+        /* Widget Tác giả */
+        .widget-about { text-align: center; }
+        .widget-about img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #f7f5f0;}
+        .widget-about p { font-size: 0.95rem; color: #666; font-weight: 300; margin-bottom: 15px; }
+
+        /* Widget Danh mục */
+        .widget-categories ul { list-style: none; padding: 0; margin: 0; }
+        .widget-categories li { border-bottom: 1px dashed #eee; padding: 12px 0; }
+        .widget-categories li:last-child { border-bottom: none; }
+        .widget-categories a { color: #555; text-decoration: none; display: flex; justify-content: space-between; transition: 0.3s; font-size: 0.95rem;}
+        .widget-categories a:hover { color: #b89564; padding-left: 5px; }
+
+        /* Widget Bài viết mới */
+        .recent-post-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: center; }
+        .recent-post-item img { width: 70px; height: 70px; object-fit: cover; border-radius: 4px; }
+        .recent-post-info h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin: 0 0 5px 0; line-height: 1.3; }
+        .recent-post-info a { color: #1a1a1a; text-decoration: none; transition: 0.3s; }
+        .recent-post-info a:hover { color: #b89564; }
+        .recent-post-info span { font-size: 0.8rem; color: #888; }
+
+        /* Banner dính ở sidebar */
+        .widget-banner { background: url('nghile1.jpg') center/cover; padding: 40px 30px; text-align: center; color: #fff; position: sticky; top: 100px; border-radius: 4px; overflow: hidden;}
+        .widget-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1; }
+        .banner-content { position: relative; z-index: 2; }
+        .banner-content h4 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 15px; }
+        .banner-content p { font-size: 0.9rem; font-weight: 300; margin-bottom: 20px; }
+        .btn-banner { display: inline-block; padding: 10px 25px; background: #b89564; color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: 600; transition: 0.3s; }
+        .btn-banner:hover { background: #fff; color: #111; }
+
+        /* ================= BÀI VIẾT LIÊN QUAN ================= */
+        .related-posts { background: #f7f5f0; padding: 80px 5%; border-top: 1px solid #e0dcd3; }
+        .related-container { max-width: 1200px; margin: 0 auto; }
+        .related-title { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 40px; text-align: center; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        
+        .related-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: transform 0.4s ease; }
+        .related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.06); }
+        .related-img { height: 200px; }
+        .related-img img { width: 100%; height: 100%; object-fit: cover; }
+        .related-info { padding: 20px; }
+        .related-info h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin: 0 0 10px 0; line-height: 1.4;}
+        .related-info a { color: #1a1a1a; text-decoration: none; transition: 0.3s; }
+        .related-info a:hover { color: #b89564; }
+
+        /* FOOTER */
+        footer { background-color: #111; color: #aaa; padding: 40px 0; text-align: center; }
+        footer p { font-size: 0.85rem; letter-spacing: 2px; margin: 0; }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 992px) {
+            .blog-container { flex-direction: column; }
+            .blog-sidebar { max-width: 100%; }
+            .widget-banner { position: static; }
+        }
+        @media (max-width: 768px) {
+            .blog-title { font-size: 2.2rem; }
+            .blog-content { text-align: left; }
+            .blog-quote { font-size: 1.2rem; padding: 20px; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LỤC HỶ WEDDING</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li> 
+                <li class="dropdown">
+                    <a href="dich-vu.html">Dịch vụ <span style="font-size: 10px;">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="decor-cuoi.html">Decor Cưới</a></li>
+                        <li><a href="san-khau-cuoi.html">Sân Khấu Cưới</a></li>
+                        <li><a href="trang-tri-gia-tien.html">Trang Trí Gia Tiên</a></li>
+                        <li><a href="sinh-le-cuoi.html">Sính Lễ Cưới</a></li>
+                        <li><a href="cong-cuoi.html">Cổng Cưới</a></li>
+                    </ul>
+                </li>
+                <li><a href="album.html">ALBUM</a></li>
+                <li><a href="blog.html" class="active gold-text fw-bold">Cẩm nang</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a> / <a href="blog.html">Cẩm nang</a> / Văn Hóa Cưới
+    </div>
+
+    <div class="blog-container">
+        
+        <main class="blog-main" data-aos="fade-up">
+            <div class="blog-header">
+                <span class="blog-category">Văn Hóa Cưới</span>
+                <h1 class="blog-title">Ý Nghĩa Của Các Nghi Lễ Truyền Thống Trong Đám Cưới Việt</h1>
+                <div class="blog-meta">
+                    <span><i class="far fa-calendar-alt"></i> 10/05/2026</span>
+                    <span><i class="far fa-user"></i> Lục Hỷ Planner</span>
+                    <span><i class="far fa-eye"></i> 3,420 lượt xem</span>
+                </div>
+            </div>
+
+            <img src="images/Blog/hoahong1.jpg" alt="Lễ Gia Tiên Truyền Thống" class="blog-featured-img">
+
+            <div class="blog-content">
+                <p>Đám cưới truyền thống của người Việt Nam luôn mang đậm bản sắc văn hóa Á Đông, với những nghi thức thể hiện sự trân trọng nguồn cội và gắn kết hai bên gia đình. Tuy nhiên, với nhịp sống hiện đại, không ít cặp đôi trẻ cảm thấy bối rối trước các thuật ngữ như Vu quy, Tân hôn hay Thành hôn.</p>
+                
+                <p>Hôm nay, Lục Hỷ sẽ giúp các Dâu - Rể tương lai giải mã ý nghĩa thực sự của từng nghi lễ và cách sử dụng từ ngữ sao cho thật chuẩn xác nhé!</p>
+
+                <h3>1. Lễ đính hôn (Lễ Ăn Hỏi)</h3>
+                <p>Lễ đính hôn còn có tên gọi khác là lễ ăn hỏi, ở miền Nam thường được gọi là đám hỏi. Đây là sự gặp mặt chính thức giữa hai gia đình để hứa hẹn chuyện cưới gả cho cặp đôi. Sau buổi lễ đính hôn, chàng trai và cô gái xem như đã có hôn ước chính thức với nhau.</p>
+                <p>Trong buổi lễ này, gia đình nhà trai sẽ mang lễ vật đính hôn (sính lễ, tráp ăn hỏi) đến nhà gái. Việc gia đình nhà gái nhận lễ vật đồng nghĩa với việc chấp nhận chàng rể này. Buổi lễ sẽ được diễn ra tại gia đình nhà gái, thời gian thường được tổ chức trước lễ Vu quy và Thành hôn.</p>
+
+                <figure class="blog-image-group" data-aos="fade-up">
+                    <img src="images/Blog/nghile2.jpg" alt="Lễ Đính Hôn" class="blog-image-in-content">
+                    <figcaption class="blog-image-caption">Nụ cười rạng rỡ của dâu rể trong ngày đính ước với thiết kế cổng hoa mang đậm nét truyền thống.</figcaption>
+                </figure>
+
+                <h3>2. Lễ Vu Quy</h3>
+                <p>Vu quy là danh từ để chỉ buổi lễ mà nhà gái đưa cô dâu về nhà chồng. Từ “Vu quy” được sử dụng để dành riêng cho bên nhà gái và thường xuất hiện trên cổng hoa, phông màn (backdrop) được treo tại tư gia nhà gái.</p>
+                
+                <figure class="blog-image-group" data-aos="fade-up">
+                    <img src="images/Blog/nghile5.jpg" alt="Lễ Vu Quy" class="blog-image-in-content">
+                    <figcaption class="blog-image-caption">Góc không gian xuất giá tại tư gia nhà gái với tà áo dài trắng và bảng tên đón khách được trang trí tinh tế.</figcaption>
+                </figure>
+
+                <p>Tại lễ Vu quy, Cô dâu và Chú rể sẽ cùng nhau thắp nén nhang thành kính trên bàn thờ tổ tiên nhà gái, sau đó bái lạy để tạ ơn công sinh thành dưỡng dục của cha mẹ trước khi cô dâu bước lên xe hoa về nhà chồng.</p>
+
+                <h3>3. Lễ Thành Hôn</h3>
+                <p>Trước kia, từ “Thành hôn” được dùng để chỉ buổi tiệc đãi khách chung ở không gian rộng lớn như nhà hàng, khách sạn của cả hai bên gia đình. Từ này cũng được sử dụng rất phổ biến khi in trên các tấm thiệp cưới để báo tin mừng.</p>
+                <p>Hiện nay, từ "Thành hôn" được người miền Bắc ưa chuộng sử dụng hơn, đặc biệt là tại gia đình chú rể, mang ý nghĩa của buổi lễ đón dâu về nhà trai và chính thức nên vợ thành chồng.</p>
+
+                <figure class="blog-image-group" data-aos="fade-up">
+                    <img src="images/Blog/nghile3.jpg" alt="Lễ Thành Hôn" class="blog-image-in-content">
+                    <figcaption class="blog-image-caption">Bảng tên gỗ "Lễ Thành Hôn" sang trọng đặt tại khu vực đón khách ngoài trời do Lục Hỷ thiết kế.</figcaption>
+                </figure>
+
+                <h3>4. Lễ Tân Hôn</h3>
+                <p>Tân hôn là lễ đón cô dâu mới, dùng để chỉ lễ kết hôn và được diễn ra tại nhà chú rể. Khác với "Thành hôn" ở miền Bắc, từ “Tân hôn” được sử dụng phổ biến hơn ở các tỉnh miền Nam và thường được in trên biển treo tại cổng hoa hay phông cưới ở nhà chú rể.</p>
+
+                <figure class="blog-image-group" data-aos="fade-up">
+                    <img src="images/Blog/nghile4.jpg" alt="Lễ Tân Hôn" class="blog-image-in-content">
+                    <figcaption class="blog-image-caption">Không gian backdrop "Lễ Tân Hôn" rực rỡ tại nhà trai, sẵn sàng chào đón nàng dâu mới.</figcaption>
+                </figure>
+
+                <h3>Tóm lại: Sử dụng từ ngữ sao cho đúng?</h3>
+                <p>Dựa theo ý nghĩa trên, việc sử dụng từ ngữ sẽ được phân định rõ ràng như sau:</p>
+                <ul>
+                    <li>Từ <strong>“Vu quy”</strong> được sử dụng riêng cho bên nhà gái. Chỉ khi cô dâu chuẩn bị về nhà chồng thì mới được gọi là Vu quy.</li>
+                    <li>Đối với nhà trai khi đón dâu về, sẽ dùng từ <strong>“Tân hôn”</strong> (đối với phong tục miền Nam), hoặc dùng từ <strong>“Thành hôn”</strong> (đối với phong tục miền Bắc).</li>
+                    <li>Trên thiệp mời khách tới dự tiệc chung tại nhà hàng, dùng từ <strong>"Thành hôn"</strong> là hợp lý nhất.</li>
+                </ul>
+
+                <div class="blog-quote">
+                    Hãy để Lục Hỷ trở thành người bạn đồng hành đáng tin cậy, tạo nên không gian trang trọng và lãng mạn cho ngày cưới và gia tiên của bạn, mang đến một trải nghiệm tuyệt vời cùng những kỷ niệm đáng nhớ.
+                </div>
+
+                <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #b89564; font-style: italic; text-align: right; margin-top: 40px;">Tʜᴀɴᴋs ғᴏʀ ᴄʜᴏᴏsɪɴɢ ᴜs!</p>
+
+            </div>
+
+            <div class="blog-tags">
+                <span style="font-weight: 600; font-size: 0.9rem;">Tags:</span>
+                <a href="#" class="tag">Truyền Thống</a>
+                <a href="#" class="tag">Nghi Lễ Cưới</a>
+                <a href="#" class="tag">Vu Quy</a>
+                <a href="#" class="tag">Tân Hôn</a>
+                <a href="#" class="tag">Kiến Thức Cưới</a>
+            </div>
+        </main>
+
+        <aside class="blog-sidebar" data-aos="fade-up" data-aos-delay="200">
+            
+            <div class="widget widget-about">
+                <h3 class="widget-title">Về Lục Hỷ</h3>
+                <img src="nghile2.jpg" alt="Lục Hỷ Wedding Planner">
+                <p>Đơn vị trang trí và kiến tạo nghệ thuật tiệc cưới. Chúng tôi tôn vinh nét đẹp truyền thống trong không gian đương đại.</p>
+            </div>
+
+            <div class="widget widget-categories">
+                <h3 class="widget-title">Chuyên mục</h3>
+                <ul>
+                    <li><a href="#">Văn hóa cưới hỏi <span>(12)</span></a></li>
+                    <li><a href="#">Kinh nghiệm chuẩn bị <span>(24)</span></a></li>
+                    <li><a href="#">Câu chuyện tình yêu <span>(8)</span></a></li>
+                    <li><a href="#">Xu hướng trang trí <span>(15)</span></a></li>
+                </ul>
+            </div>
+
+            <div class="widget widget-recent">
+                <h3 class="widget-title">Bài viết mới</h3>
+                <div class="recent-post-item">
+                    <img src="images/Blog/hoasen1.jpg" alt="Post">
+                    <div class="recent-post-info">
+                        <h4><a href="blog-hoa-sen.html">Ý Nghĩa Thanh Cao Của Hoa Sen Trong Trang Trí Lễ Gia Tiên</a></h4>
+                        <span>20/05/2026</span>
+                    </div>
+                </div>
+                <div class="recent-post-item">
+                    <img src="images/Blog/hoahong3.jpg" alt="Post">
+                    <div class="recent-post-info">
+                        <h4><a href="blog-hoa-hong.html">Ý Nghĩa Các Loài Hoa Hồng Trong Trang Trí Gia Tiên</a></h4>
+                        <span>29/04/2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget-banner">
+                <div class="banner-content">
+                    <h4>Cưới Hỏi Trọn Gói</h4>
+                    <p>Chuẩn bị chu đáo mọi nghi thức từ Lễ Đính Hôn đến ngày Vu Quy.</p>
+                    <a href="lien-he.html" class="btn-banner">Nhận tư vấn</a>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <section class="related-posts">
+        <div class="related-container">
+            <h2 class="related-title">Có thể bạn sẽ quan tâm</h2>
+            <div class="related-grid" data-aos="fade-up">
+                
+                <div class="related-card">
+                    <div class="related-img"><img src="images/Blog/ttgt2.jpg" alt="Hoa cưới"></div>
+                    <div class="related-info">
+                        <h4><a href="blog-chuan-bi.html">Cần chuẩn bị những gì cho lễ gia tiên?</a></h4>
+                    </div>
+                </div>
+
+                <div class="related-card">
+                    <div class="related-img"><img src="images/Blog/nghithuc2.jpg" alt="Hoa cưới"></div>
+                    <div class="related-info">
+                        <h4><a href="blog-nghi-thuc.html">Những Nghi Thức Đám Cưới Truyền Thống Để Chú Rể Rước Nàng Về Dinh</a></h4>
+                    </div>
+                </div>
+                
+                <div class="related-card">
+                    <div class="related-img"><img src="images/Blog/hoahong1.jpg" alt="Hoa hồng Gia tiên"></div>
+                    <div class="related-info">
+                        <h4><a href="blog-hoa-hong.html">Hoa Hồng: Nữ hoàng trong không gian trang trí Gia Tiên</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KHỐI LIÊN HỆ CHUNG ================= -->
+    <section class="home-contact">
+        <div class="contact-wrapper">
+            <h2>Hãy để chúng tôi viết tiếp câu chuyện của bạn</h2>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <h4>Địa chỉ</h4>
+                    <p>123 Đường ABC, Quận X<br>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hotline</h4>
+                    <p>092 224 69 80</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hello@luchywedding.com</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1CNEzh7YvL/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="lien-he.html" class="btn-outline-gold" data-aos="fade-up" data-aos-delay="400">Trò chuyện với chúng tôi</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= END KHỐI LIÊN HỆ ================= -->
+
+    <!-- Thẻ footer gốc luôn nằm ở dưới cùng -->
+    <footer>
+        <p>© 2026 LỤC HỶ WEDDING STORYTELLER - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 50
+        });
+    </script>
+</body>
+</html>

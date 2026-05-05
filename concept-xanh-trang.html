@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gia Tiên Tone Trắng Xanh | LỤC HỶ Wedding</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ================= CSS TRANG CHI TIẾT ALBUM ================= */
+        body { 
+            background-color: #fcfbf9; 
+            overflow-x: hidden; 
+            color: #222; 
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0;
+            animation: pageFadeIn 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+
+        @keyframes pageFadeIn {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header { position: sticky; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(15px); background: rgba(252, 251, 249, 0.85); border-bottom: 1px solid rgba(184, 149, 100, 0.1);}
+
+        /* 1. CONCEPT HEADER (Mô tả concept) */
+        .concept-header { padding: 100px 5% 80px 5%; max-width: 1300px; margin: 0 auto; display: flex; gap: 80px; align-items: flex-start; }
+        
+        .concept-title { flex: 1; }
+        .concept-title span { font-size: 0.85rem; letter-spacing: 4px; color: #b89564; text-transform: uppercase; margin-bottom: 15px; display: block; font-weight: 600; }
+        .concept-title h1 { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; letter-spacing: -2px; }
+        
+        .concept-meta { list-style: none; padding: 0; margin: 0; border-left: 1px solid #e0dcd3; padding-left: 25px; }
+        .concept-meta li { font-size: 0.95rem; color: #555; margin-bottom: 15px; letter-spacing: 0.5px;}
+        .concept-meta li strong { color: #111; font-weight: 500; margin-right: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
+
+        .concept-desc { flex: 1.5; padding-top: 10px;}
+        .concept-desc h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 25px; font-style: italic; color: #b89564; }
+        .concept-desc p { font-size: 1.15rem; line-height: 2; color: #444; font-weight: 300; margin-bottom: 20px; text-align: justify; }
+        .concept-desc .thanks { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111; font-style: italic; margin-top: 30px; display: block; text-align: right;}
+
+        /* 2. LƯỚI ẢNH MASONRY CHI TIẾT ALBUM */
+        .detail-gallery { padding: 0 5% 150px 5%; max-width: 1400px; margin: 0 auto; }
+        
+        .masonry-grid { column-count: 3; column-gap: 20px; }
+        .masonry-item { break-inside: avoid; margin-bottom: 20px; overflow: hidden; border-radius: 4px; background: #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);}
+        .masonry-item img { width: 100%; display: block; filter: brightness(0.95); transition: transform 0.8s ease, filter 0.8s ease; cursor: pointer; }
+        .masonry-item:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { background-color: #f7f5f0; padding: 60px 0; text-align: center; border-top: 1px solid #e0dcd3; }
+        
+        .back-btn { text-align: center; margin-bottom: 100px; }
+        .back-btn a { display: inline-block; padding: 15px 40px; border: 1px solid #b89564; color: #b89564; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
+        .back-btn a:hover { background: #b89564; color: #fff; }
+
+        @media (max-width: 992px) {
+            .concept-header { flex-direction: column; gap: 40px; }
+            .concept-title h1 { font-size: 3.5rem; }
+            .masonry-grid { column-count: 2; }
+            .concept-meta { border-left: none; border-top: 1px solid #e0dcd3; padding-left: 0; padding-top: 25px; }
+            .concept-desc .thanks { text-align: left; }
+        }
+        @media (max-width: 768px) { .masonry-grid { column-count: 1; } }
+    </style>
+</head>
+<body>
+
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <div class="logo">LỤC HỶ WEDDING</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                <li class="dropdown">
+                    <a href="dich-vu.html">Dịch vụ <span style="font-size: 10px;">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="decor-cuoi.html">Decor Cưới</a></li>
+                        <li><a href="san-khau-cuoi.html">Sân Khấu Cưới</a></li>
+                        <li><a href="trang-tri-gia-tien.html">Trang Trí Gia Tiên</a></li>
+                        <li><a href="sinh-le-cuoi.html">Sính Lễ Cưới</a></li>
+                        <li><a href="cong-cuoi.html">Cổng Cưới</a></li>
+                    </ul>
+                </li>
+                <li><a href="album.html" class="active gold-text fw-bold">ALBUM</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="concept-header">
+        <div class="concept-title" data-aos="fade-right" data-aos-duration="1200">
+            <span>Trang Trí Gia Tiên</span>
+            <h1>Trắng Xanh</h1>
+            <ul class="concept-meta">
+                <li><strong>Cặp đôi:</strong> Tường Vi & Thế Hiển</li>
+                <li><strong>Hạng mục:</strong> Lễ Vu Quy</li>
+                <li><strong>Ngày tổ chức:</strong> 02.07.2022</li>
+            </ul>
+        </div>
+        <div class="concept-desc" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+            <h3>"Bản hòa ca của sự tinh khôi và bình yên"</h3>
+            <p>Sự kết hợp giữa sắc trắng tinh khôi và xanh rêu dịu mát mang đến một không gian Gia Tiên vô cùng thanh lịch và bình yên. Màu trắng đại diện cho tình yêu thuần khiết, trong sáng, trong khi màu xanh là biểu tượng của sự tươi mới, niềm hy vọng và sự khởi đầu đâm chồi nảy lộc.</p>
+            <p>Khi hòa quyện vào nhau, tone màu Trắng Xanh không chỉ làm dịu đi không khí căng thẳng của ngày trọng đại mà còn tôn lên vẻ đẹp trang nghiêm, thiêng liêng. Đặc biệt, sự nhã nhặn của phong cách này vô cùng phù hợp để tôn vinh các nghi thức cưới hỏi truyền thống và Công giáo.</p>
+            <p>Hãy để Lục Hỷ trở thành người bạn đồng hành đáng tin cậy trong việc tạo nên không gian trang trọng và lãng mạn cho ngày cưới và gia tiên, mang đến cho bạn một trải nghiệm tuyệt vời cùng những kỷ niệm đáng nhớ.</p>
+            <span class="thanks">Tʜᴀɴᴋs ғᴏʀ ᴄʜᴏᴏsɪɴɢ ᴜs!</span>
+        </div>
+    </section>
+
+    <section class="detail-gallery">
+        <div class="masonry-grid">
+            <div class="masonry-item" data-aos="fade-up"><img src="images/Album/xanhtrang3.jpg" alt="Cô dâu Tường Vi trong áo dài trắng với phông nền Trắng Xanh"></div>
+            <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="images/Album/xanhtrang4.jpg" alt="Bảng Welcome Save The Date Tường Vi Thế Hiển"></div>
+            <div class="masonry-item" data-aos="fade-up" data-aos-delay="200"><img src="images/Album/xanhtrang1.jpg" alt="Không gian làm lễ Gia Tiên Công giáo Tone Trắng Xanh"></div>
+            <div class="masonry-item" data-aos="fade-up"><img src="images/Album/xanhtrang2.jpg" alt="Chi tiết trang trí hoa và chữ Hỷ"></div>
+        </div>
+    </section>
+
+    <div class="back-btn" data-aos="zoom-in">
+        <a href="album.html">← Trở về Thư viện Album</a>
+    </div>
+
+    <!-- ================= KHỐI LIÊN HỆ CHUNG ================= -->
+    <section class="home-contact">
+        <div class="contact-wrapper">
+            <h2>Hãy để chúng tôi viết tiếp câu chuyện của bạn</h2>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <h4>Địa chỉ</h4>
+                    <p>123 Đường ABC, Quận X<br>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hotline</h4>
+                    <p>092 224 69 80</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hello@luchywedding.com</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1CNEzh7YvL/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="lien-he.html" class="btn-outline-gold" data-aos="fade-up" data-aos-delay="400">Trò chuyện với chúng tôi</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= END KHỐI LIÊN HỆ ================= -->
+
+    <!-- Thẻ footer gốc luôn nằm ở dưới cùng -->
+    <footer>
+        <p>© 2026 LỤC HỶ WEDDING STORYTELLER - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true, offset: 50 });</script>
+</body>
+</html>

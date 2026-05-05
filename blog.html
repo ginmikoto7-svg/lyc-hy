@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cẩm Nang Cưới | LỤC HỶ Wedding Storyteller</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ================= CSS TỔNG THỂ ================= */
+        body { background-color: #fcfbf9; overflow-x: hidden; color: #222; font-family: 'Montserrat', sans-serif; margin: 0; }
+        header { position: sticky; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(15px); background: rgba(252, 251, 249, 0.85); border-bottom: 1px solid rgba(184, 149, 100, 0.1);}
+
+        /* ================= 1. HERO BLOG ================= */
+        .blog-hero { text-align: center; padding: 120px 5% 100px 5%; background-color: #f7f5f0; border-bottom: 1px solid #e0dcd3; }
+        .blog-hero h6 { font-size: 0.9rem; letter-spacing: 5px; color: #b89564; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1.1; color: #1a1a1a; margin-bottom: 25px; }
+        .blog-hero p { font-size: 1.1rem; color: #666; max-width: 700px; line-height: 1.8; font-weight: 300; margin: 0 auto; }
+
+        /* ================= 2. LƯỚI BÀI VIẾT (BLOG GRID CHUẨN 3 CỘT) ================= */
+        .blog-grid-section { padding: 80px 5% 120px 5%; max-width: 1300px; margin: 0 auto; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        
+        .blog-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.4s ease; display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        
+        .blog-card-img { height: 280px; overflow: hidden; }
+        .blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+        .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+        
+        .blog-card-content { padding: 35px 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        .post-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .post-category { color: #b89564; font-weight: 600; }
+        .post-date { color: #888; }
+
+        .blog-card-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1.3; margin-bottom: 15px; }
+        .blog-card-content h3 a { color: #1a1a1a; text-decoration: none; transition: 0.3s; }
+        .blog-card-content h3 a:hover { color: #b89564; }
+        .blog-card-content p { font-size: 0.95rem; line-height: 1.7; color: #666; font-weight: 300; margin-bottom: 25px; flex-grow: 1; }
+
+        .btn-readmore { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; padding-bottom: 5px; border-bottom: 1px solid #1a1a1a; transition: 0.3s ease; font-weight: 500;}
+        .btn-readmore:hover { color: #b89564; border-color: #b89564; }
+
+        /* ================= 3. PHÂN TRANG ================= */
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 60px; }
+        .page-num { display: inline-block; width: 40px; height: 40px; line-height: 40px; text-align: center; border: 1px solid #d3cec4; border-radius: 50%; color: #555; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .page-num.active, .page-num:hover { background-color: #b89564; color: #fff; border-color: #b89564; }
+        .page-num.next { width: auto; padding: 0 25px; border-radius: 30px; letter-spacing: 1px; font-weight: 500; }
+
+        /* FOOTER */
+        footer { background-color: #f7f5f0; padding: 60px 0; text-align: center; border-top: 1px solid #e0dcd3; }
+        footer p { font-size: 0.85rem; letter-spacing: 2px; color: #888; margin: 0; }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 992px) {
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .blog-hero h1 { font-size: 3rem; }
+            .blog-hero { padding: 80px 5% 60px 5%; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LỤC HỶ WEDDING</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li> 
+                <li class="dropdown">
+                    <a href="dich-vu.html">Dịch vụ <span style="font-size: 10px;">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="decor-cuoi.html">Decor Cưới</a></li>
+                        <li><a href="san-khau-cuoi.html">Sân Khấu Cưới</a></li>
+                        <li><a href="trang-tri-gia-tien.html">Trang Trí Gia Tiên</a></li>
+                        <li><a href="sinh-le-cuoi.html">Sính Lễ Cưới</a></li>
+                        <li><a href="cong-cuoi.html">Cổng Cưới</a></li>
+                    </ul>
+                </li>
+                <li><a href="album.html">ALBUM</a></li>
+                <li><a href="blog.html" class="active gold-text fw-bold">Blog</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <h6 data-aos="fade-down">Lục Hỷ Magazine</h6>
+        <h1 data-aos="fade-up" data-aos-duration="1200">Cẩm Nang Cưới</h1>
+        <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">Những câu chuyện tình yêu, xu hướng trang trí đương đại và cẩm nang kinh nghiệm cho quá trình chuẩn bị ngày trọng đại hoàn mỹ.</p>
+    </section>
+
+    <section class="blog-grid-section">
+        <div class="blog-grid">
+            
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-card-img">
+                    <a href="blog-chuan-bi.html"><img src="images/Blog/ttgt2.jpg" alt="Cẩm nang Gia Tiên"></a>
+                </div>
+                <div class="blog-card-content">
+                    <div class="post-meta">
+                        <span class="post-category">Kinh nghiệm cưới</span>
+                        <span class="post-date">29 Tháng 04, 2026</span>
+                    </div>
+                    <h3><a href="blog-chuan-bi.html">Cần chuẩn bị những gì cho lễ gia tiên?</a></h3>
+                    <p>Lễ gia tiên là nghi lễ truyền thống thiêng liêng. Khám phá checklist các hạng mục trang trí tiêu chuẩn giúp ngày vui thêm trọn vẹn và hoàn mỹ.</p>
+                    <div><a href="blog-chuan-bi.html" class="btn-readmore">Đọc tiếp &rarr;</a></div>
+                </div>
+            </div>
+
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-card-img">
+                    <a href="blog-nghi-le.html"><img src="images/Blog/nghile1.jpg" alt="Ý nghĩa nghi lễ"></a>
+                </div>
+                <div class="blog-card-content">
+                    <div class="post-meta">
+                        <span class="post-category">Văn Hóa Cưới</span>
+                        <span class="post-date">10 Tháng 05, 2026</span>
+                    </div>
+                    <h3><a href="blog-nghi-le.html">Ý Nghĩa Của Các Nghi Lễ Truyền Thống Trong Đám Cưới Việt</a></h3>
+                    <p>Giải mã ý nghĩa thực sự của Lễ Đính Hôn, Vu quy, Tân hôn, Thành hôn và cách sử dụng danh xưng sao cho thật chuẩn xác, đúng phong tục.</p>
+                    <div><a href="blog-nghi-le.html" class="btn-readmore">Đọc tiếp &rarr;</a></div>
+                </div>
+            </div>
+            
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="blog-card-img">
+                    <a href="blog-nghi-thuc.html"><img src="images/Blog/nghithuc1.jpg" alt="Nghi thức rước dâu"></a>
+                </div>
+                <div class="blog-card-content">
+                    <div class="post-meta">
+                        <span class="post-category">Văn Hóa Cưới</span>
+                        <span class="post-date">15 Tháng 05, 2026</span>
+                    </div>
+                    <h3><a href="blog-nghi-thuc.html">Những Nghi Thức Đám Cưới Truyền Thống Để Chú Rể Rước Nàng Về Dinh</a></h3>
+                    <p>Chi tiết 9 bước nghi thức rước dâu chuẩn phong tục giúp chú rể và hai bên gia đình thuận lợi trong việc xin dâu và rước nàng về dinh.</p>
+                    <div><a href="blog-nghi-thuc.html" class="btn-readmore">Đọc tiếp &rarr;</a></div>
+                </div>
+            </div>
+
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-card-img">
+                    <a href="blog-hoa-hong.html"><img src="images/Blog/hoahong3.jpg" alt="Ý nghĩa Hoa Hồng"></a>
+                </div>
+                <div class="blog-card-content">
+                    <div class="post-meta">
+                        <span class="post-category">Ý Nghĩa Hoa Cưới</span>
+                        <span class="post-date">29 Tháng 04, 2026</span>
+                    </div>
+                    <h3><a href="blog-hoa-hong.html">Ý Nghĩa Các Loài Hoa Hồng Trong Trang Trí Gia Tiên</a></h3>
+                    <p>Mệnh danh là "nữ hoàng" của thế giới hoa, hoa hồng mang đến cho không gian gia tiên vẻ đẹp uy nghiêm, lãng mạn và tinh tế vượt thời gian.</p>
+                    <div><a href="blog-hoa-hong.html" class="btn-readmore">Đọc tiếp &rarr;</a></div>
+                </div>
+            </div>
+
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-card-img">
+                    <a href="blog-hoa-sen.html"><img src="images/Blog/hoasen1.jpg" alt="Ý nghĩa Hoa Sen"></a>
+                </div>
+                <div class="blog-card-content">
+                    <div class="post-meta">
+                        <span class="post-category">Ý Nghĩa Hoa Cưới</span>
+                        <span class="post-date">20 Tháng 05, 2026</span>
+                    </div>
+                    <h3><a href="blog-hoa-sen.html">Ý Nghĩa Thanh Cao Của Hoa Sen Trong Trang Trí Lễ Gia Tiên</a></h3>
+                    <p>Biểu tượng của sự thuần khiết. Khám phá nét đẹp bình dị nhưng vô cùng sang trọng của hoa sen trắng và sen hồng trong ngày cưới Á Đông.</p>
+                    <div><a href="blog-hoa-sen.html" class="btn-readmore">Đọc tiếp &rarr;</a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pagination" data-aos="fade-in" data-aos-duration="1000">
+            <a href="#" class="page-num active">1</a>
+            <a href="#" class="page-num next">Tiếp theo &rarr;</a>
+        </div>
+    </section>
+
+    <!-- ================= KHỐI LIÊN HỆ CHUNG ================= -->
+    <section class="home-contact">
+        <div class="contact-wrapper">
+            <h2>Hãy để chúng tôi viết tiếp câu chuyện của bạn</h2>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <h4>Địa chỉ</h4>
+                    <p>123 Đường ABC, Quận X<br>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hotline</h4>
+                    <p>092 224 69 80</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hello@luchywedding.com</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1CNEzh7YvL/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="lien-he.html" class="btn-outline-gold" data-aos="fade-up" data-aos-delay="400">Trò chuyện với chúng tôi</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= END KHỐI LIÊN HỆ ================= -->
+
+    <!-- Thẻ footer gốc luôn nằm ở dưới cùng -->
+    <footer>
+        <p>© 2026 LỤC HỶ WEDDING STORYTELLER - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LỤC HỶ Wedding Storyteller | Trang chủ</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ================= CSS TỔNG THỂ ================= */
+        body { background-color: #fcfbf9; overflow-x: hidden; color: #222; font-family: 'Montserrat', sans-serif; margin: 0; }
+        header { position: sticky; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(15px); background: rgba(252, 251, 249, 0.85); border-bottom: 1px solid rgba(184, 149, 100, 0.1);}
+
+        /* ================= 1. HERO MOSAIC ================= */
+        .top-mosaic-section {
+            width: 100%; height: 95vh; display: grid;
+            grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(4, 1fr);
+            gap: 12px; padding: 12px; box-sizing: border-box; background-color: #fcfbf9; 
+            position: relative; overflow: hidden;
+        }
+
+        .top-mosaic-section::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.15); z-index: 2;
+        }
+
+        .mosaic-item { position: relative; overflow: hidden; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .mosaic-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .mosaic-item:hover img { transform: scale(1.08); }
+
+        .mi-1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+        .mi-2 { grid-column: 3 / 5; grid-row: 1 / 2; }
+        .mi-3 { grid-column: 5 / 7; grid-row: 1 / 3; }
+        .mi-4 { grid-column: 3 / 4; grid-row: 2 / 4; }
+        .mi-5 { grid-column: 4 / 5; grid-row: 2 / 3; }
+        .mi-6 { grid-column: 1 / 3; grid-row: 3 / 4; }
+        .mi-7 { grid-column: 4 / 5; grid-row: 3 / 4; }
+        .mi-8 { grid-column: 5 / 7; grid-row: 3 / 5; }
+        .mi-9 { grid-column: 1 / 2; grid-row: 4 / 5; }
+        .mi-10 { grid-column: 2 / 3; grid-row: 4 / 5; }
+        .mi-11 { grid-column: 3 / 5; grid-row: 4 / 5; }
+
+        .mosaic-overlay-content {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 5; text-align: center; color: white; max-width: 800px; width: 100%;
+            padding: 0 20px; pointer-events: none;
+        }
+
+        .mosaic-overlay-content h1 {
+            font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px; line-height: 1.1;
+        }
+
+        .mosaic-overlay-content p {
+            font-size: 1.2rem; margin-bottom: 40px; letter-spacing: 2px; font-weight: 300;
+            color: rgba(255,255,255,0.95); text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+
+        .mosaic-overlay-content .btn-gold-filled {
+            display: inline-block; padding: 15px 40px; background-color: #b89564; color: #111;
+            text-decoration: none; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem;
+            font-weight: 600; border-radius: 30px; transition: 0.4s; pointer-events: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .mosaic-overlay-content .btn-gold-filled:hover { background-color: #fff; transform: translateY(-3px); }
+
+        /* ================= 2. GIỚI THIỆU ================= */
+        .home-about-staggered {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 120px auto;
+            padding: 0 5%;
+            gap: 80px;
+        }
+
+        .staggered-text {
+            flex: 1.2;
+        }
+        .staggered-text h6 { font-size: 0.85rem; letter-spacing: 4px; color: #b89564; text-transform: uppercase; margin-bottom: 15px; font-weight: 600; }
+        .staggered-text h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #1a1a1a; margin-bottom: 25px; line-height: 1.1; }
+        .staggered-text p { font-size: 1.05rem; line-height: 1.9; color: #555; font-weight: 300; margin-bottom: 30px; text-align: justify; }
+
+        .btn-link { display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; padding-bottom: 5px; border-bottom: 1px solid #b89564; transition: 0.3s ease; }
+        .btn-link:hover { color: #b89564; }
+
+        .staggered-images {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            height: 450px;
+        }
+
+        .st-img {
+            flex: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .st-img img { width: 100%; height: 100%; object-fit: cover; transition: 1s ease; filter: brightness(0.95); }
+        .st-img:hover img { transform: scale(1.05); filter: brightness(1); }
+
+        .st-img-1 { margin-top: 40px; margin-bottom: -40px; } 
+        .st-img-2 { margin-bottom: 40px; margin-top: -40px; } 
+
+        /* ================= 3. DỊCH VỤ ================= */
+        .services-section { padding: 100px 5%; background-color: #f7f5f0; }
+        .section-header-center { text-align: center; margin-bottom: 60px; }
+        .section-header-center h6 { font-size: 0.85rem; letter-spacing: 4px; color: #b89564; text-transform: uppercase; margin-bottom: 15px; font-weight: 600; }
+        .section-header-center h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #1a1a1a; line-height: 1.1; }
+
+        .services-bento {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .bento-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background-color: #111;
+        }
+
+        .bc-1 { grid-column: 1 / 3; height: 350px; } 
+        .bc-2 { grid-column: 3 / 4; height: 350px; } 
+        .bc-3 { grid-column: 1 / 2; height: 300px; } 
+        .bc-4 { grid-column: 2 / 3; height: 300px; } 
+        .bc-5 { grid-column: 3 / 4; height: 300px; } 
+
+        .bento-card img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.8s ease, filter 0.8s ease;
+            filter: brightness(0.65);
+            display: block;
+        }
+
+        .bento-card:hover img {
+            transform: scale(1.05); filter: brightness(0.4);
+        }
+
+        .bento-content {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            padding: 30px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        .bento-content h3 {
+            font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 5px;
+            transform: translateY(20px); transition: 0.4s ease;
+        }
+
+        .bento-content p {
+            font-size: 0.95rem; line-height: 1.6; color: #ddd; font-weight: 300;
+            opacity: 0; max-height: 0; overflow: hidden; transition: 0.4s ease;
+            margin: 0;
+        }
+
+        .bento-link {
+            display: inline-block; margin-top: 15px; color: #b89564; text-decoration: none;
+            text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; font-weight: 600;
+            opacity: 0; transform: translateY(10px); transition: 0.4s ease;
+        }
+
+        .bento-card:hover .bento-content h3 { transform: translateY(0); margin-bottom: 10px; }
+        .bento-card:hover .bento-content p { opacity: 1; max-height: 100px; }
+        .bento-card:hover .bento-link { opacity: 1; transform: translateY(0); }
+
+        .btn-outline-dark {
+            display: inline-block; padding: 15px 40px; border: 1px solid #1a1a1a; color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif; text-decoration: none; text-transform: uppercase;
+            font-size: 0.85rem; letter-spacing: 3px; transition: all 0.4s ease;
+        }
+        .btn-outline-dark:hover { background-color: #1a1a1a; color: #fff; }
+
+        /* ================= 4. THƯ VIỆN ẢNH ================= */
+        .home-album { padding: 120px 5%; max-width: 1400px; margin: 0 auto; background-color: #fcfbf9;}
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
+        .portfolio-card { text-decoration: none; display: block; position: relative; height: 50vh; border-radius: 4px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; display: block; }
+        .portfolio-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(250, 248, 245, 0.92); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; opacity: 0; transition: all 0.5s ease; }
+        .portfolio-overlay::before { content: ''; position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(184, 149, 100, 0.5); transform: scale(0.95); transition: all 0.5s ease; }
+        .portfolio-overlay h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #1a1a1a; margin-bottom: 15px; transform: translateY(20px); transition: 0.5s ease; }
+        .portfolio-overlay span { font-size: 0.8rem; font-family: 'Montserrat', sans-serif; color: #333; text-transform: uppercase; letter-spacing: 2px; transform: translateY(20px); transition: 0.5s ease; }
+        
+        .portfolio-card:hover img { transform: scale(1.05); }
+        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-card:hover .portfolio-overlay::before { transform: scale(1); }
+        .portfolio-card:hover .portfolio-overlay h3, .portfolio-card:hover .portfolio-overlay span { transform: translateY(0); }
+
+        .btn-center { text-align: center; }
+
+        /* ================= 4.5 SECTION BLOG NỔI BẬT TRANG CHỦ ================= */
+        .home-blog-section {
+            padding: 80px 5% 120px 5%;
+            background-color: #fff; /* Tách biệt với màu nền album */
+            position: relative;
+        }
+
+        /* Họa tiết mờ ảo giống hình mẫu */
+        .home-blog-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(184, 149, 100, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .blog-layout-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr; /* Cột phải to hơn một chút */
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Phần bên trái: Tiêu đề + 2 bài viết nhỏ */
+        .section-title-left {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #b89564;
+            margin: 0 0 40px 0;
+            line-height: 1;
+        }
+
+        .small-post-list { display: flex; flex-direction: column; gap: 40px; }
+
+        .small-post-item {
+            display: flex;
+            gap: 25px;
+            text-decoration: none;
+            color: inherit;
+            align-items: center;
+            transition: transform 0.4s ease;
+        }
+        .small-post-item:hover { transform: translateX(10px); }
+
+        .small-post-img {
+            width: 220px;
+            height: 140px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .small-post-img img {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;
+        }
+        .small-post-item:hover .small-post-img img { transform: scale(1.05); }
+
+        .small-post-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+            transition: color 0.3s;
+        }
+        .small-post-item:hover .small-post-content h3 { color: #b89564; }
+
+        .blog-meta-home {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .blog-meta-home i { margin-right: 5px; color: #b89564; }
+
+        /* Phần bên phải: 1 Bài viết siêu to */
+        .featured-home-post {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.4s ease;
+        }
+        .featured-home-post:hover { transform: translateY(-10px); }
+
+        .featured-post-img {
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .featured-post-img img {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;
+        }
+        .featured-home-post:hover .featured-post-img img { transform: scale(1.05); }
+
+        .featured-post-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #1a1a1a;
+            margin: 0 0 15px 0;
+            line-height: 1.3;
+            transition: color 0.3s;
+        }
+        .featured-home-post:hover .featured-post-content h3 { color: #b89564; }
+
+        .featured-post-content .blog-meta-home { margin-bottom: 15px; }
+
+        .featured-post-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        /* ================= 5. LIÊN HỆ ================= */
+        .home-contact { background-color: #111; color: #fff; padding: 100px 5%; text-align: center; }
+        .contact-wrapper { max-width: 800px; margin: 0 auto; }
+        .home-contact h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #b89564; margin-bottom: 40px; font-style: italic; }
+        .contact-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
+        .contact-item h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #b89564; margin-bottom: 10px; }
+        .contact-item p { font-size: 1rem; color: #aaa; font-weight: 300; line-height: 1.6; }
+        
+        .social-links { display: flex; justify-content: center; gap: 20px; }
+        .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: #fff; text-decoration: none; transition: 0.3s; }
+        .social-links a:hover { background-color: #b89564; border-color: #b89564; color: #111; }
+        
+        .btn-outline-gold {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid #b89564;
+            color: #b89564;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.4s ease;
+        }
+        .btn-outline-gold:hover { background-color: #b89564; color: #111; }
+
+        /* ================= FOOTER ================= */
+        footer { background-color: #f7f5f0; padding: 40px 0; text-align: center; border-top: 1px solid #e0dcd3; }
+        footer p { font-size: 0.85rem; letter-spacing: 2px; color: #888; margin: 0; }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 1100px) {
+            .mosaic-overlay-content h1 { font-size: 3.5rem; }
+            .home-about-staggered { gap: 40px; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-bento { grid-template-columns: repeat(2, 1fr); }
+            .bc-1 { grid-column: 1 / 3; } 
+            .bc-2, .bc-3, .bc-4, .bc-5 { grid-column: span 1; height: 300px; }
+        }
+
+        @media (max-width: 992px) {
+            /* Responsive cho Blog Home */
+            .blog-layout-wrapper { grid-template-columns: 1fr; gap: 60px; }
+            .section-title-left { text-align: center; margin-bottom: 30px; }
+            .featured-post-img { height: 350px; }
+        }
+
+        @media (max-width: 768px) {
+            .mosaic-overlay-content h1 { font-size: 2.2rem; }
+            
+            .home-about-staggered { flex-direction: column; text-align: center; gap: 60px; padding: 80px 5%; margin: 40px auto; }
+            .staggered-text { padding-right: 0; }
+            .staggered-text p { text-align: center; }
+            .staggered-images { width: 100%; height: 350px; }
+            .st-img-1 { margin: 0 10px 0 0; }
+            .st-img-2 { margin: 0 0 0 10px; }
+            
+            .services-bento { grid-template-columns: 1fr; }
+            .bc-1, .bc-2, .bc-3, .bc-4, .bc-5 { grid-column: 1 / 2; height: 250px; }
+            .bento-content p { display: none; } 
+
+            .top-mosaic-section { height: auto; grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 8px; }
+            .mosaic-item { grid-column: span 1 !important; grid-row: span 1 !important; height: 25vh;}
+            .mi-1, .mi-3, .mi-8 { grid-column: span 2 !important; height: 35vh;}
+
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .contact-info-grid { grid-template-columns: 1fr; gap: 40px; }
+
+            /* Mobile cho Blog Home */
+            .small-post-item { flex-direction: column; gap: 15px; text-align: center; }
+            .small-post-item:hover { transform: translateY(-5px); }
+            .small-post-img { width: 100%; height: 220px; }
+            .featured-post-img { height: 250px; }
+            .featured-post-content h3 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LỤC HỶ WEDDING</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active gold-text fw-bold">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li> 
+                <li class="dropdown">
+                    <a href="dich-vu.html">Dịch vụ <span style="font-size: 10px;">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="decor-cuoi.html">Decor Cưới</a></li>
+                        <li><a href="san-khau-cuoi.html">Sân Khấu Cưới</a></li>
+                        <li><a href="trang-tri-gia-tien.html">Trang Trí Gia Tiên</a></li>
+                        <li><a href="sinh-le-cuoi.html">Sính Lễ Cưới</a></li>
+                        <li><a href="cong-cuoi.html">Cổng Cưới</a></li>
+                    </ul>
+                </li>
+                <li><a href="album.html">ALBUM</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="top-mosaic-section" data-aos="fade-in" data-aos-duration="2000">
+        <div class="mosaic-item mi-1" data-aos="zoom-in" data-aos-delay="100"><img src="images/DecorGiaTien/GiaTien1.jpg" alt="Lục Hỷ Wedding - Feature Couple 1"></div>
+        <div class="mosaic-item mi-2" data-aos="zoom-in" data-aos-delay="300"><img src="images/CongCuoi/congcheckin.jpg" alt="Lục Hỷ Wedding - Entrance Decor"></div>
+        <div class="mosaic-item mi-3" data-aos="zoom-in" data-aos-delay="500"><img src="images/DecorCuoi/canhbien2.jpg" alt="Lục Hỷ Wedding - Beach Scene"></div>
+        <div class="mosaic-item mi-4" data-aos="zoom-in" data-aos-delay="700"><img src="images/CongCuoi/nguoi1.jpg" alt="Lục Hỷ Wedding - Portrait 1"></div>
+        <div class="mosaic-item mi-5" data-aos="zoom-in" data-aos-delay="900"><img src="images/DecorCuoi/hoa.jpg" alt="Lục Hỷ Wedding - Floral Detail"></div>
+        <div class="mosaic-item mi-6" data-aos="zoom-in" data-aos-delay="1100"><img src="images/SinhLe/bungtrap.jpg" alt="Lục Hỷ Wedding - Ceremony Detail"></div>
+        <div class="mosaic-item mi-7" data-aos="zoom-in" data-aos-delay="100"><img src="images/DecorCuoi/anhcuoi1.jpg" alt="Lục Hỷ Wedding - Feature Couple 2"></div>
+        <div class="mosaic-item mi-8" data-aos="zoom-in" data-aos-delay="300"><img src="images/DecorGiaTien/GiaTien2.jpg" alt="Lục Hỷ Wedding - Traditional Gia Tien"></div>
+        <div class="mosaic-item mi-9" data-aos="zoom-in" data-aos-delay="500"><img src="images/CongCuoi/nguoi2.jpg" alt="Lục Hỷ Wedding - Portrait 2"></div>
+        <div class="mosaic-item mi-10" data-aos="zoom-in" data-aos-delay="700"><img src="images/CongCuoi/nguoi3.jpg" alt="Lục Hỷ Wedding - Portrait 3"></div>
+        <div class="mosaic-item mi-11" data-aos="zoom-in" data-aos-delay="100"><img src="images/CongCuoi/nguoi4.jpg" alt="Lục Hỷ Wedding - Feature Couple 3"></div>
+
+        <div class="mosaic-overlay-content" data-aos="fade-up" data-aos-delay="1300">
+            <h1>Kẻ viết tình ca<br>bằng không gian</h1>
+            <p>Đơn vị kiến tạo nghệ thuật tiệc cưới cao cấp</p>
+            <a href="dich-vu.html" class="btn-gold-filled">Khám phá</a>
+        </div>
+    </section>
+
+    <section class="home-about-staggered">
+        <div class="staggered-text" data-aos="fade-right" data-aos-duration="1200">
+            <h6>Câu chuyện của chúng tôi</h6>
+            <h2>Nghệ Thuật <br> & Cảm Xúc</h2>
+            <p>Tại LỤC HỶ, chúng tôi không chỉ đơn thuần là trang trí một buổi tiệc cưới. Chúng tôi lắng nghe câu chuyện của bạn và kiến tạo nên một không gian nghệ thuật - nơi lưu giữ và tôn vinh tình yêu của riêng bạn bằng ngôn ngữ của hoa, ánh sáng và kiến trúc.</p>
+            <p>Sự tỉ mỉ đến từng chi tiết nhỏ nhất kết hợp cùng tư duy thẩm mỹ đương đại chính là chìa khóa để chúng tôi biến ngày trọng đại của bạn trở nên lộng lẫy và mang đậm dấu ấn cá nhân.</p>
+            <br>
+            <a href="gioi-thieu.html" class="btn-link">Về chúng tôi &rarr;</a>
+        </div>
+        
+        <div class="staggered-images" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+            <div class="st-img st-img-1"><img src="images/Album/hoatrang6.jpg" alt="Cổng cưới Lục Hỷ"></div>
+            <div class="st-img st-img-2"><img src="images/Album/hong1.jpg" alt="Chi tiết Gia Tiên"></div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="section-header-center" data-aos="fade-up" data-aos-duration="1000">
+            <h6>Những gì chúng tôi làm</h6>
+            <h2>Dịch Vụ Nổi Bật</h2>
+        </div>
+        
+        <div class="services-bento">
+            <a href="decor-cuoi.html" class="bento-card bc-1" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/Album/hong4.jpg" alt="Decor Cưới">
+                <div class="bento-content">
+                    <h3>Decor Cưới</h3>
+                    <p>Thiết kế không gian tổng thể theo concept độc bản qua ngôn ngữ sắp đặt hoa tươi và ánh sáng.</p>
+                    <span class="bento-link">Khám phá &rarr;</span>
+                </div>
+            </a>
+
+            <a href="san-khau-cuoi.html" class="bento-card bc-2" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/Album/bien3.jpg" alt="Sân Khấu">
+                <div class="bento-content">
+                    <h3>Sân Khấu</h3>
+                    <p>Tâm điểm của buổi tiệc với sự kết hợp kiến trúc đỉnh cao.</p>
+                    <span class="bento-link">Khám phá &rarr;</span>
+                </div>
+            </a>
+
+            <a href="trang-tri-gia-tien.html" class="bento-card bc-3" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/Album/do4.jpg" alt="Gia Tiên">
+                <div class="bento-content">
+                    <h3>Gia Tiên</h3>
+                    <p>Gìn giữ nét truyền thống Á Đông đầy sang trọng.</p>
+                    <span class="bento-link">Khám phá &rarr;</span>
+                </div>
+            </a>
+
+            <a href="sinh-le-cuoi.html" class="bento-card bc-4" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/Album/hong6.jpg" alt="Sính Lễ">
+                <div class="bento-content">
+                    <h3>Sính Lễ</h3>
+                    <p>Bộ mâm quả, tráp ăn hỏi kết thủ công đẳng cấp.</p>
+                    <span class="bento-link">Khám phá &rarr;</span>
+                </div>
+            </a>
+
+            <a href="cong-cuoi.html" class="bento-card bc-5" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/Album/be1.jpg" alt="Cổng Cưới">
+                <div class="bento-content">
+                    <h3>Cổng Cưới</h3>
+                    <p>Lời chào ấn tượng dẫn lối khách mời vào tiệc.</p>
+                    <span class="bento-link">Khám phá &rarr;</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="btn-center" style="margin-top: 60px;" data-aos="fade-up">
+            <a href="dich-vu.html" class="btn-outline-dark">Xem chi tiết dịch vụ</a>
+        </div>
+    </section>
+
+    <section class="home-album">
+        <div class="section-header-center" data-aos="fade-up" data-aos-duration="1000">
+            <h6>The Gallery</h6>
+            <h2>Thư Viện Cảm Xúc</h2>
+        </div>
+        <div class="portfolio-grid">
+            <a href="concept-hoa-trang.html" class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/Album/hoatrang.jpg" alt="Mùa Hoa Lê Trắng">
+                <div class="portfolio-overlay">
+                    <h3>Mùa Hoa Lê Trắng</h3>
+                    <span>Xem Concept</span>
+                </div>
+            </a>
+            <a href="concept-xanh.html" class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/Album/xanh7.jpg" alt="Sắc xanh">
+                <div class="portfolio-overlay">
+                    <h3>Sắc Xanh</h3>
+                    <span>Xem Concept</span>
+                </div>
+            </a>
+            <a href="concept-hong.html" class="portfolio-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/Album/hong1.jpg" alt="Hồng Pastel">
+                <div class="portfolio-overlay">
+                    <h3>Hồng Pastel</h3>
+                    <span>Xem Concept</span>
+                </div>
+            </a>
+        </div>
+        <div class="btn-center" data-aos="fade-up">
+            <a href="album.html" class="btn-link">Khám phá toàn bộ Album &rarr;</a>
+        </div>
+    </section>
+
+    <!-- ================= SECTION BLOG TRANG CHỦ MỚI ================= -->
+    <section class="home-blog-section">
+        <div class="blog-layout-wrapper">
+            
+            <!-- Cột trái: Tiêu đề và 2 bài nhỏ -->
+            <div class="blog-left-col" data-aos="fade-right">
+                <h2 class="section-title-left">Blog</h2>
+                
+                <div class="small-post-list">
+                    <!-- Bài nhỏ 1 -->
+                    <a href="blog-chuan-bi.html" class="small-post-item">
+                        <div class="small-post-img">
+                            <img src="images/Blog/hoahong1.jpg" alt="Trang trí gia tiên">
+                        </div>
+                        <div class="small-post-content">
+                            <h3>Cần chuẩn bị những gì cho lễ gia tiên trọn vẹn?</h3>
+                            <div class="blog-meta-home"><i class="far fa-clock"></i> 29/04/2026 &nbsp;|&nbsp; <i class="far fa-user"></i> Lục Hỷ</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Bài nhỏ 2 -->
+                    <a href="blog-nghi-thuc.html" class="small-post-item">
+                        <div class="small-post-img">
+                            <img src="images/Blog/nghithuc1.jpg" alt="Nghi thức đám cưới">
+                        </div>
+                        <div class="small-post-content">
+                            <h3>9 Nghi thức đám cưới truyền thống rước nàng về dinh</h3>
+                            <div class="blog-meta-home"><i class="far fa-clock"></i> 15/05/2026 &nbsp;|&nbsp; <i class="far fa-user"></i> Lục Hỷ</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cột phải: 1 Bài nổi bật to -->
+            <div class="blog-right-col" data-aos="fade-left" data-aos-delay="200">
+                <a href="blog-nghi-le.html" class="featured-home-post">
+                    <div class="featured-post-img">
+                        <!-- Sử dụng lại ảnh bảng gỗ Lễ Thành Hôn -->
+                        <img src="images/Blog/nghile1.jpg" alt="Ý nghĩa các nghi lễ cưới">
+                    </div>
+                    <div class="featured-post-content">
+                        <h3>Ý Nghĩa Của Các Nghi Lễ Truyền Thống Trong Đám Cưới Việt</h3>
+                        <div class="blog-meta-home"><i class="far fa-clock"></i> 10/05/2026 &nbsp;|&nbsp; <i class="far fa-user"></i> Lục Hỷ</div>
+                        <p>Giải mã ý nghĩa thực sự của Lễ Đính Hôn, Vu quy, Tân hôn, Thành hôn và cách sử dụng danh xưng sao cho thật chuẩn xác, đúng phong tục truyền thống Á Đông...</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- ================= END SECTION BLOG TRANG CHỦ ================= -->
+
+    <section class="home-contact">
+        <div class="contact-wrapper" data-aos="fade-up" data-aos-duration="1200">
+            <h2>Hãy để chúng tôi viết tiếp câu chuyện của bạn</h2>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <h4>Địa chỉ</h4>
+                    <p>123 Đường ABC, Quận X<br>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hotline</h4>
+                    <p>092 224 69 80</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hello@luchywedding.com</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="lien-he.html" class="btn-outline-gold">Trò chuyện với chúng tôi</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 LỤC HỶ WEDDING STORYTELLER - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
