@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu | LỤC HỶ Wedding Storyteller</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ================= CSS PHONG CÁCH ART EXHIBITION ================= */
+        body { background-color: #f7f5f0; overflow-x: hidden; color: #222; font-family: 'Montserrat', sans-serif; }
+        header { position: fixed; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(15px); background: rgba(247, 245, 240, 0.85); border-bottom: 1px solid rgba(184, 149, 100, 0.1);}
+
+        /* 1. HERO */
+        .exhibition-hero { height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; position: relative; }
+        .hero-title { flex: 1; z-index: 2; position: relative; }
+        .hero-title h6 { font-size: 1rem; letter-spacing: 5px; color: #b89564; text-transform: uppercase; margin-bottom: 20px; font-weight: 500; }
+        .hero-title h1 { font-family: 'Playfair Display', serif; font-size: 5.5rem; line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; letter-spacing: -2px; }
+        .hero-title p { font-size: 1.2rem; color: #555; max-width: 400px; line-height: 1.8; font-weight: 300; }
+        
+        .hero-image { flex: 1; height: 70vh; position: relative; display: flex; justify-content: flex-end; }
+        .hero-image img { width: 85%; height: 100%; object-fit: cover; border-radius: 4px; box-shadow: -20px 20px 50px rgba(0,0,0,0.1); }
+        .hero-image::before { content: ''; position: absolute; bottom: -30px; right: 10%; width: 70%; height: 100%; background: #e9e3d9; z-index: -1; }
+
+        /* 2. QUOTE */
+        .quote-section { padding: 150px 10%; text-align: center; }
+        .quote-section h2 { font-family: 'Playfair Display', serif; font-size: 3.2rem; line-height: 1.5; color: #b89564; font-style: italic; font-weight: 400; max-width: 1000px; margin: 0 auto; }
+
+        /* 3. KHỐI GIÁ TRỊ CỐT LÕI */
+        .staggered-section { padding: 50px 5% 150px 5%; max-width: 1300px; margin: 0 auto; }
+        .staggered-grid { display: flex; gap: 40px; justify-content: space-between; }
+        
+        .stagger-item { flex: 1; display: flex; flex-direction: column; }
+        .stagger-item:nth-child(2) { margin-top: 100px; }
+        
+        .stagger-img { width: 100%; height: 450px; overflow: hidden; margin-bottom: 30px; border-radius: 4px; }
+        .stagger-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s ease; }
+        .stagger-item:hover .stagger-img img { transform: scale(1.08); }
+        
+        .stagger-text h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #111; margin-bottom: 15px; }
+        .stagger-text p { font-size: 1.05rem; line-height: 1.8; color: #666; font-weight: 300; }
+
+        /* ================= 4. MONTAGE ================= */
+        .montage-section { display: flex; align-items: center; padding: 100px 5% 150px 5%; background-color: #fff; border-top: 1px solid #f0e9df; gap: 60px; }
+        .montage-text { flex: 1; }
+        .montage-text h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 30px; color: #1a1a1a; line-height: 1.1;}
+        .montage-text p { font-size: 1.15rem; line-height: 2; color: #555; font-weight: 300; margin-bottom: 25px; text-align: justify;}
+        
+        .montage-gallery { 
+            flex: 1.3; 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr; 
+            grid-template-rows: 1fr 1fr; 
+            gap: 20px; 
+            height: 75vh; 
+        }
+        .m-img { border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .m-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; filter: brightness(0.95); }
+        .m-img:hover img { transform: scale(1.03); filter: brightness(1); }
+        
+        .m-img-1 { grid-column: 1 / 2; grid-row: 1 / 3; }
+        .m-img-2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+        .m-img-3 { grid-column: 2 / 3; grid-row: 2 / 3; }
+
+        /* ================= 5. THE AESTHETIC ================= */
+        .aesthetic-showcase-section { padding: 150px 5%; max-width: 1400px; margin: 0 auto; }
+        .showcase-container { display: flex; flex-direction: column; gap: 60px; }
+        
+        .showcase-text { text-align: center; max-width: 900px; margin: 0 auto; }
+        .showcase-text h6 { font-size: 0.9rem; letter-spacing: 4px; color: #b89564; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; }
+        .showcase-text h2 { font-family: 'Playfair Display', serif; font-size: 3.8rem; color: #1a1a1a; margin-bottom: 30px; line-height: 1.1; }
+        .showcase-text p { font-size: 1.1rem; line-height: 1.9; color: #666; font-weight: 300; margin-bottom: 20px; text-align: center; }
+
+        .showcase-gallery-flex { 
+            display: flex; 
+            gap: 30px; 
+            align-items: center; 
+            justify-content: center; 
+            height: 65vh; 
+        }
+        
+        .showcase-item { 
+            flex: 1; 
+            height: 80%; 
+            border-radius: 6px; 
+            overflow: hidden; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
+        }
+        .showcase-item:nth-child(2) { height: 100%; transform: translateY(-20px); }
+        
+        .showcase-item img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: all 0.6s ease; 
+            filter: brightness(0.95);
+        }
+        .showcase-item:hover { z-index: 10; box-shadow: 0 25px 60px rgba(0,0,0,0.2); }
+        .showcase-item:hover img { transform: scale(1.05); filter: brightness(1); }
+
+        /* 6. THE PROCESS */
+        .process-section { background-color: #111; color: #fff; padding: 150px 5%; }
+        .process-header { text-align: center; margin-bottom: 80px; }
+        .process-header h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #b89564; font-style: italic; }
+        
+        .process-grid { display: flex; gap: 50px; max-width: 1200px; margin: 0 auto; }
+        .process-step { flex: 1; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 40px; position: relative; }
+        .process-step .step-num { position: absolute; top: 10px; right: 0; font-family: 'Playfair Display', serif; font-size: 4rem; color: rgba(184, 149, 100, 0.1); line-height: 1; }
+        .process-step h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; color: #fff; }
+        .process-step p { font-size: 1rem; line-height: 1.8; color: #aaa; font-weight: 300; }
+
+        /* ================= 7. GALLERY EXHIBITION (CHUYỂN SANG 4 CỘT) ================= */
+        .gallery-exhibition { padding: 150px 5%; background-color: #f7f5f0; }
+        .gallery-header { text-align: center; margin-bottom: 80px; }
+        .gallery-header h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #1a1a1a; }
+        
+        .four-col-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .album-card {
+            text-decoration: none;
+            display: block;
+            position: relative;
+            height: 50vh; /* Thiết lập chiều cao để ra dáng ảnh dọc */
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background-color: #eee;
+        }
+
+        .album-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease, filter 0.8s ease;
+            display: block;
+            filter: brightness(0.9);
+        }
+
+        .album-card:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        /* Lớp nền mờ và chữ hiện lên khi rê chuột */
+        .album-overlay {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%;
+            padding: 40px 20px 30px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff;
+            text-align: center;
+            transition: all 0.4s ease;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .album-card:hover .album-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .album-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .album-overlay span {
+            font-size: 0.8rem;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b89564;
+            border-bottom: 1px solid #b89564;
+            padding-bottom: 3px;
+        }
+
+        /* NÚT BẤM */
+        .cta-wrapper { text-align: center; padding: 120px 5%; background-color: #1a1a1a; color: #fff; }
+        .cta-wrapper h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 40px; color: #b89564; font-style: italic; }
+        .btn-outline-gold { display: inline-block; padding: 15px 50px; border: 1px solid #b89564; color: #b89564; text-decoration: none; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; transition: 0.4s; }
+        .btn-outline-gold:hover { background-color: #b89564; color: #111; }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .exhibition-hero { flex-direction: column; height: auto; padding-top: 80px; text-align: center; }
+            .hero-title h1 { font-size: 3.5rem; }
+            .hero-title p { margin: 0 auto 50px auto; }
+            .hero-image { width: 100%; height: 50vh; justify-content: center; }
+            .hero-image img { width: 100%; }
+            .hero-image::before { display: none; }
+            
+            .quote-section h2 { font-size: 2rem; }
+            
+            .staggered-grid { flex-direction: column; gap: 60px; }
+            .stagger-item:nth-child(2) { margin-top: 0; }
+            .stagger-img { height: 350px; }
+            
+            .montage-section { flex-direction: column; padding: 80px 5%; gap: 40px; }
+            .montage-text { padding-right: 0; text-align: center; }
+            .montage-text p { text-align: center; }
+            .montage-gallery { width: 100%; display: flex; flex-direction: column; height: auto; gap: 20px; }
+            .m-img { height: 40vh; }
+
+            .aesthetic-showcase-section { padding: 80px 5%; }
+            .showcase-text h2 { font-size: 2.8rem; }
+            .showcase-gallery-flex { flex-direction: column; height: auto; gap: 20px; }
+            .showcase-item, .showcase-item:nth-child(2) { width: 100%; height: 40vh; transform: none; }
+
+            .process-grid { flex-direction: column; gap: 40px; }
+            
+            /* Responsive cho lưới 4 Album */
+            .four-col-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        }
+        
+        @media (max-width: 768px) {
+            .four-col-grid { grid-template-columns: 1fr; gap: 30px; }
+            .album-card { height: 45vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LỤC HỶ WEDDING</div>
+        
+        <!-- Nút 3 gạch (Hamburger Menu) -->
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <!-- LƯU Ý: Xóa class "active gold-text fw-bold" ở mục Dịch Vụ và chuyển sang mục tương ứng với trang hiện tại nhé -->
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html" class="active gold-text fw-bold">Giới thiệu</a></li> 
+                <li class="dropdown">
+                    <!-- Hộp chứa bọc ngoài để tách chữ và icon -->
+                    <div class="menu-title-flex">
+                        <a href="dich-vu.html" id="services-dropdown">Dịch vụ</a>
+                        
+                        <!-- Khu vực bấm của icon được làm to ra bên phải -->
+                        <div id="dropdown-icon" class="icon-click-area">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <ul class="dropdown-menu">
+                        <li><a href="decor-cuoi.html">Decor Cưới</a></li>
+                        <li><a href="san-khau-cuoi.html">Sân Khấu Cưới</a></li>
+                        <li><a href="trang-tri-gia-tien.html">Trang Trí Gia Tiên</a></li>
+                        <li><a href="sinh-le-cuoi.html">Sính Lễ Cưới</a></li>
+                        <li><a href="cong-cuoi.html">Cổng Cưới</a></li>
+                    </ul>
+                </li>
+                <li><a href="album.html">ALBUM</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="exhibition-hero">
+        <div class="hero-title">
+            <h6 data-aos="fade-down" data-aos-duration="1000">Welcome to Lục Hỷ</h6>
+            <h1 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200">Kẻ Viết Tình Ca <br> Bằng Không Gian</h1>
+            <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">Chúng tôi không chỉ trang trí tiệc cưới. Chúng tôi kiến tạo nên một bảo tàng nghệ thuật - nơi lưu giữ và tôn vinh câu chuyện tình yêu của riêng bạn.</p>
+        </div>
+        <div class="hero-image" data-aos="zoom-out-left" data-aos-duration="1800">
+            <img src="images/CongCuoi/congcheckin.jpg" alt="Lục Hỷ Wedding">
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <h2 data-aos="fade-up" data-aos-duration="1500">"Một tiệc cưới hoàn hảo không nằm ở sự phô trương, mà nằm ở những chi tiết chạm đến cảm xúc sâu thẳm nhất."</h2>
+    </section>
+
+    <section class="staggered-section">
+        <div class="staggered-grid">
+            <div class="stagger-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="0">
+                <div class="stagger-img">
+                    <img src="images/CongCuoi/bananh1.jpg" alt="Tận Tâm">
+                </div>
+                <div class="stagger-text">
+                    <h3>01. Tận tâm</h3>
+                    <p>Mọi hành trình của LỤC HỶ đều bắt đầu từ sự lắng nghe chân thành. Chúng tôi đặt mình vào vị trí của cô dâu chú rể để chăm chút từng cành hoa, từng ánh đèn sân khấu với trách nhiệm cao nhất.</p>
+                </div>
+            </div>
+
+            <div class="stagger-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <div class="stagger-img">
+                    <img src="images/CongCuoi/wellcom.jpg" alt="Sáng Tạo">
+                </div>
+                <div class="stagger-text">
+                    <h3>02. Đương đại</h3>
+                    <p>Phá vỡ những khuôn mẫu cũ kỹ. Chúng tôi tiên phong ứng dụng ngôn ngữ kiến trúc hiện đại, nghệ thuật cắm hoa tự do (freestyle) để tạo nên những không gian tiệc cưới mang đậm tính thời thượng.</p>
+                </div>
+            </div>
+
+            <div class="stagger-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                <div class="stagger-img">
+                    <img src="images/SanKhau/loivao.jpg" alt="Chuyên Nghiệp">
+                </div>
+                <div class="stagger-text">
+                    <h3>03. Chuẩn xác</h3>
+                    <p>Nghệ thuật cần đi đôi với sự chính xác. Từ bản vẽ 3D đến lúc thực tế thi công tại sảnh tiệc, quy trình vận hành minh bạch của LỤC HỶ đảm bảo ngày trọng đại của bạn diễn ra hoàn mỹ tuyệt đối.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="montage-section">
+        <div class="montage-text" data-aos="fade-right" data-aos-duration="1500">
+            <h2>Kỳ tích từ <br>những giấc mơ</h2>
+            <p>Để có được một khung cảnh rạng rỡ lộng lẫy trong ngày cưới, đó là kết quả của vô số đêm không ngủ. Là những bản vẽ bị gạch xóa để tìm ra sự hoàn hảo, là những giọt mồ hôi trên công trình thi công, và là sự lựa chọn khắt khe từng loại hoa tươi nhất.</p>
+            <p>Đến với LỤC HỶ, bạn chỉ cần tận hưởng niềm hạnh phúc của tình yêu. Mọi sự chuẩn bị không gian, hãy để chúng tôi thay bạn gánh vác.</p>
+        </div>
+        
+        <div class="montage-gallery">
+            <div class="m-img m-img-1" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                <img src="images/DecorCuoi/hoa.jpg" alt="Lục Hỷ 1">
+            </div>
+            <div class="m-img m-img-2" data-aos="fade-down" data-aos-duration="1200" data-aos-delay="300">
+                <img src="images/DecorCuoi/anhcuoi1.jpg" alt="Lục Hỷ 2">
+            </div>
+            <div class="m-img m-img-3" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+                <img src="images/DecorCuoi/tim.jpg" alt="Lục Hỷ 3">
+            </div>
+        </div>
+    </section>
+
+    <section class="aesthetic-showcase-section">
+        <div class="showcase-container">
+            <div class="showcase-text" data-aos="fade-up" data-aos-duration="1200">
+                <h6>The Aesthetic</h6>
+                <h2>Ngôn Ngữ Thiết Kế Độc Bản</h2>
+                <p>LỤC HỶ theo đuổi chủ nghĩa lãng mạn nhưng không rườm rà. Chúng tôi tin rằng một không gian cưới đẳng cấp không nằm ở việc cố gắng lấp đầy mọi khoảng trống, mà nằm ở nghệ thuật sắp đặt hình khối, ánh sáng và màu sắc một cách thông minh. Tất cả tạo nên một ngôn ngữ thiết kế mang đậm cá tính Lục Hỷ: Đương đại, Thanh lịch và Vượt thời gian.</p>
+            </div>
+            
+            <div class="showcase-gallery-flex">
+                <div class="showcase-item" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="100">
+                    <img src="images/DecorCuoi/wellcom.jpg" alt="Chi tiết nghệ thuật 1">
+                </div>
+                <div class="showcase-item" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                    <img src="images/CongCuoi/bananh3.jpg" alt="Chi tiết nghệ thuật 2">
+                </div>
+                <div class="showcase-item" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="500">
+                    <img src="images/CongCuoi/bananh2.jpg" alt="Chi tiết nghệ thuật 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-header" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Hành Trình Hiện Thực Hóa</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-step" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="0">
+                <span class="step-num">01</span>
+                <h3>Lắng nghe</h3>
+                <p>Mọi dự án đều bắt đầu bằng một ly trà ấm và những cuộc trò chuyện chân thành. LỤC HỶ sẽ lắng nghe câu chuyện tình yêu, sở thích, màu sắc cá nhân và ngân sách của bạn để nắm bắt trọn vẹn "linh hồn" của buổi tiệc.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                <span class="step-num">02</span>
+                <h3>Phác thảo</h3>
+                <p>Từ những ý tưởng thô sơ, đội ngũ thiết kế sẽ dựng lên các bản vẽ 3D trực quan, mô phỏng chính xác tỷ lệ, ánh sáng và màu hoa tại không gian sảnh tiệc thực tế để bạn dễ dàng hình dung.</p>
+            </div>
+            <div class="process-step" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                <span class="step-num">03</span>
+                <h3>Thi công</h3>
+                <p>Đây là lúc phép màu xuất hiện. Đội ngũ thi công lành nghề của chúng tôi sẽ làm việc với cường độ cao nhất để biến bản vẽ trên giấy thành một không gian lộng lẫy, sắc nét đến từng centimet trong ngày cưới của bạn.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-exhibition">
+        <div class="gallery-header" data-aos="fade-up">
+            <h2>Dấu Ấn Lục Hỷ</h2>
+        </div>
+        
+        <div class="four-col-grid">
+            <a href="concept-nau-be.html" class="album-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/Album/be1.jpg" alt="Hương Xưa Màu Mới">
+                <div class="album-overlay">
+                    <h3>Lễ Gia Tiên <br> "Hương Xưa Màu Mới"</h3>
+                    <span>Xem Album</span>
+                </div>
+            </a>
+            
+            <a href="concept-bien.html" class="album-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/Album/bien2.jpg" alt="Biển Và Em">
+                <div class="album-overlay">
+                    <h3>Tiệc Cưới Ngoài Trời <br> "Biển Và Em"</h3>
+                    <span>Xem Album</span>
+                </div>
+            </a>
+            
+            <a href="concept-hong-pastel.html" class="album-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/Album/hong1.jpg" alt="Tone Hồng Pastel">
+                <div class="album-overlay">
+                    <h3>Trang Trí Gia Tiên <br> "Tone Hồng Pastel"</h3>
+                    <span>Xem Album</span>
+                </div>
+            </a>
+            
+            <a href="concept-nude.html" class="album-card" data-aos="fade-up" data-aos-delay="400">
+                <img src="images/Album/nude7.jpg" alt="Tone Nude">
+                <div class="album-overlay">
+                    <h3>Trang Trí Gia Tiên <br> "Tone Nude"</h3>
+                    <span>Xem Album</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ================= KHỐI LIÊN HỆ CHUNG ================= -->
+    <section class="home-contact">
+        <div class="contact-wrapper">
+            <h2>Hãy để chúng tôi viết tiếp câu chuyện của bạn</h2>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <h4>Địa chỉ</h4>
+                    <p>123 Đường ABC, Quận X<br>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hotline</h4>
+                    <p>092 224 69 80</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hello@luchywedding.com</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1CNEzh7YvL/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="lien-he.html" class="btn-outline-gold" data-aos="fade-up" data-aos-delay="400">Trò chuyện với chúng tôi</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= END KHỐI LIÊN HỆ ================= -->
+
+    <!-- Thẻ footer gốc luôn nằm ở dưới cùng -->
+    <footer>
+        <p>© 2026 LỤC HỶ WEDDING STORYTELLER - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ 
+            duration: 1200, 
+            once: true, 
+            offset: 120,
+            easing: 'ease-out-quart'
+        });
+    </script>
+    <script>
+        // Xử lý Menu Mobile & Dropdown
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+
+        if (mobileMenu && navMenu) {
+            // Nút 3 gạch chuyển thành dấu X
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                
+                const icon = mobileMenu.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times'); // Dấu X
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars'); // 3 Gạch
+                }
+            });
+        }
+
+        if (dropdown && dropdownIcon) {
+            // Nhấp vào mũi tên để mở/đóng menu con
+            dropdownIcon.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault(); 
+                    e.stopPropagation(); 
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    </script>
+<!-- ================= NÚT LIÊN HỆ NỔI (ZALO + GỌI) ================= -->
+    <div class="floating-contact">
+        <!-- Nút Zalo -->
+        <a href="https://zalo.me/0922246980" class="float-btn zalo-btn" target="_blank" rel="nofollow" title="Chat Zalo">
+            <span>Zalo</span>
+        </a>
+        
+        <!-- Nút Gọi Điện -->
+        <a href="tel:0922246980" class="float-btn call-btn" title="Gọi ngay">
+            <div class="ring-anim"></div>
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <!-- Nút Messenger -->
+        <a href="https://m.me/luchywedding" class="float-btn mess-btn" target="_blank" rel="nofollow" title="Chat Messenger">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* =============================================================
+   STYLE DÙNG CHUNG - LỤC HỶ WEDDING
+   ============================================================= */
+
+/* Cấu hình Font và Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Khóa chặt chiều ngang, chống tràn màn hình ảo trên mobile */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.8;
+    background-color: #fcfbf9;
+    /* Đã chuyển overflow-x: hidden lên gộp chung với html ở trên để phát huy tối đa hiệu quả */
+}
+
+h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; font-weight: 700; }
+.gold-text { color: #b89564 !important; }
+.text-uppercase { text-transform: uppercase; }
+.fw-bold { font-weight: bold; }
+a { text-decoration: none; transition: all 0.3s ease; }
+
+/* ================= CSS HEADER & DESKTOP MENU ================= */
+header { 
+    position: fixed; top: 0; z-index: 1000; width: 100%; 
+    backdrop-filter: blur(15px); background: rgba(252, 251, 249, 0.95); 
+    border-bottom: 1px solid rgba(184, 149, 100, 0.1);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; box-sizing: border-box; height: 70px;
+}
+
+.logo { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.5rem; font-weight: 700; 
+    letter-spacing: 2px; color: #1a1a1a; margin: 0; 
+}
+
+nav ul { list-style: none; display: flex; align-items: center; gap: 30px; margin: 0; padding: 0; }
+nav a { color: #1a1a1a; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; transition: 0.3s; }
+nav a:hover, nav a.active { color: #b89564; }
+
+.dropdown { position: relative; padding-bottom: 20px; margin-bottom: -20px; }
+.dropdown-menu { 
+    display: none; position: absolute; top: 100%; left: 0; background: #fff; 
+    padding: 10px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 2px solid #b89564; 
+    min-width: 220px; z-index: 1000; 
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li { list-style: none; margin: 0; display: block; }
+.dropdown-menu a { display: block; padding: 10px 20px; text-transform: none; font-size: 0.95rem; letter-spacing: 0; border-bottom: 1px solid #f5f5f5;}
+.dropdown-menu a:hover { background-color: #fcfbf9; padding-left: 25px; color: #b89564; }
+
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #1a1a1a; transition: 0.3s; }
+.menu-toggle:hover { color: #b89564; }
+
+/* ================= MAGAZINE ADD-ONS ================= */
+.magazine-container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+.line-divider { width: 50px; height: 2px; background: #b89564; margin: 20px 0; }
+.text-vertical { writing-mode: vertical-rl; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 5px; color: #ccc; }
+.pull-quote { font-family: 'Playfair Display', serif; font-size: 2rem; line-height: 1.4; color: #b89564; font-style: italic; border-left: 0; padding: 40px 0; text-align: center; }
+.magazine-dropcap::first-letter { font-family: 'Playfair Display', serif; font-size: 4rem; float: left; margin-right: 10px; line-height: 1; color: #b89564; }
+
+/* ================= CSS PHẦN LIÊN HỆ CHUNG & NÚT BẤM ================= */
+.home-contact { background-color: #111; color: #fff; padding: 100px 5%; text-align: center; }
+.contact-wrapper { max-width: 800px; margin: 0 auto; }
+.home-contact h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: #b89564; margin-bottom: 50px; font-style: italic; }
+.contact-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 50px; }
+.contact-item h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #b89564; margin-bottom: 15px; }
+.contact-item p { font-size: 1rem; color: #aaa; font-weight: 300; line-height: 1.6; margin: 0; }
+
+.social-links { display: flex; justify-content: center; gap: 20px; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; color: #fff; text-decoration: none; transition: 0.3s; }
+.social-links a:hover { background-color: #b89564; border-color: #b89564; color: #111; }
+
+.btn-text-gold { color: #b89564; text-decoration: none; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; transition: 0.3s; font-weight: 500; }
+.btn-text-gold:hover { color: #fff; }
+
+.cta-wrapper { text-align: center; padding: 120px 5%; background-color: #1a1a1a; color: #fff; }
+.cta-wrapper h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 40px; color: #b89564; font-style: italic; }
+.btn-outline-gold { display: inline-block; padding: 15px 50px; border: 1px solid #b89564; color: #b89564; text-decoration: none; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; transition: 0.4s; }
+.btn-outline-gold:hover { background-color: #b89564; color: #111; }
+
+@media (max-width: 768px) {
+    .contact-info-grid { grid-template-columns: 1fr; gap: 40px; }
+    .home-contact h2 { font-size: 2.2rem; }
+}
+
+/* ================= MOBILE MENU CHUẨN ================= */
+@media (max-width: 992px) {
+    /* Hiện nút 3 gạch (Nó sẽ tự động nằm bên phải do thẻ header có display: flex) */
+    .menu-toggle { display: block; }
+
+    /* Menu chính xổ thẳng xuống dưới Header */
+    #nav-menu {
+        display: none; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        padding: 0;
+        border-top: 1px solid #eaeaea;
+    }
+    #nav-menu.active { display: block; }
+
+    /* Căn chỉnh các mục thành hàng dọc */
+    #nav-menu ul { flex-direction: column; gap: 0; }
+    #nav-menu ul li { 
+        border-bottom: 1px solid #eaeaea; 
+        width: 100%; 
+        margin: 0; 
+        padding-bottom: 0; 
+    }
+    #nav-menu ul li a { display: block; padding: 15px 20px; text-align: left; }
+
+    /* Vùng chia chữ và mũi tên */
+    .menu-title-flex {
+        display: flex; justify-content: space-between; align-items: center; width: 100%;
+    }
+    .menu-title-flex a { flex: 1; border-bottom: none; }
+
+    /* Nút mũi tên to, dễ bấm */
+    .icon-click-area {
+        width: 60px; height: 52px;
+        display: flex; justify-content: center; align-items: center;
+        border-left: 1px solid #eaeaea; 
+        cursor: pointer; color: #555;
+    }
+
+    /* Xoay mũi tên 180 độ khi mở */
+    .dropdown.active .icon-click-area i {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+    }
+
+    /* Menu con Dropdown - Ẩn mặc định, chỉ mở khi class active được kích hoạt */
+    .dropdown-menu {
+        display: none;
+        position: static; 
+        width: 100%;
+        box-shadow: none; border-top: none;
+        background-color: #fbf9f5; 
+        padding: 0; 
+        transform: none; 
+        opacity: 1;
+    }
+    
+    /* Tắt tính năng tự động hiện menu khi lướt tay ngang qua (Hover) trên Mobile */
+    .dropdown:hover .dropdown-menu { display: none; }
+    
+    /* Bấm mũi tên -> JS thêm class active -> Menu con hiện ra */
+    .dropdown.active .dropdown-menu { display: block; }
+
+    /* Định dạng link bên trong menu con */
+    .dropdown-menu li a {
+        padding: 12px 20px 12px 40px !important; 
+        font-size: 0.85rem; border-bottom: 1px solid #eee;
+    }
+    .dropdown-menu li:last-child a { border-bottom: none; }
+    .dropdown-menu li:last-child { border-bottom: none; } 
+}
+/* Ép chữ "Dịch Vụ" và mũi tên nằm trên cùng 1 hàng ngang ở màn hình máy tính */
+.menu-title-flex {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Khoảng cách giữa chữ và mũi tên */
+}
+
+/* Chỉnh mũi tên nhỏ nhắn cho thanh lịch trên Desktop */
+.icon-click-area i {
+    font-size: 0.75rem; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Thêm hiệu ứng: Khi di chuột vào Dịch Vụ, mũi tên tự xoay ngược lên và đổi màu vàng */
+.dropdown:hover .icon-click-area i {
+    color: #b89564;
+    transform: rotate(180deg);
+}
+/* ================= FLOATING CONTACT BUTTONS (GỌI & ZALO) ================= */
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999; /* Đảm bảo luôn nằm trên cùng, không bị che */
+}
+
+.float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.float-btn:hover {
+    transform: translateY(-5px) scale(1.05); /* Hiệu ứng nảy lên khi rê chuột */
+    color: #fff;
+}
+
+/* Định dạng riêng nút Zalo */
+.zalo-btn {
+    background-color: #0068ff; /* Màu xanh dương chuẩn Zalo */
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Định dạng riêng nút Gọi */
+.call-btn {
+    background-color: #28a745; /* Màu xanh lá cây chuẩn nút Gọi */
+    font-size: 24px;
+}
+
+.mess-btn {
+    background: linear-gradient(45deg, #00B2FF, #006AFF) !important;
+    font-size: 26px !important;
+}
+
+/* Hiệu ứng sóng lan tỏa (Pulse) cho nút Gọi */
+.ring-anim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #28a745;
+    z-index: -1;
+    animation: pulse-ring 1.5s infinite ease-out;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .floating-contact {
+        bottom: 30px; /* Đẩy lên cao hẳn để né thanh công cụ của trình duyệt */
+        right: 20px;   /* Kéo xích vào phía trong màn hình để không bị khuất mép phải */
+        gap: 12px;
+        z-index: 999999;
+    }
+    .float-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .zalo-btn {
+        font-size: 13px;
+    }
+    .call-btn {
+        font-size: 20px;
+    }
+    .mess-btn {
+    background: linear-gradient(45deg, #00B2FF, #006AFF); /* Màu xanh gradient chuẩn của Messenger */
+    font-size: 26px; /* Kích thước icon */
+    }
+}

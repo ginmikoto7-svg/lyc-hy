@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gia Tiên Tone Cam Vàng | LỤC HỶ Wedding</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ================= CSS TRANG CHI TIẾT ALBUM ================= */
+        body { 
+            background-color: #fcfbf9; 
+            overflow-x: hidden; 
+            color: #222; 
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0;
+            animation: pageFadeIn 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+
+        @keyframes pageFadeIn {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header { position: fixed; top: 0; z-index: 1000; width: 100%; backdrop-filter: blur(15px); background: rgba(252, 251, 249, 0.85); border-bottom: 1px solid rgba(184, 149, 100, 0.1);}
+
+        /* 1. CONCEPT HEADER (Mô tả concept) */
+        .concept-header { padding: 100px 5% 80px 5%; max-width: 1300px; margin: 0 auto; display: flex; gap: 80px; align-items: flex-start; }
+        
+        .concept-title { flex: 1; }
+        .concept-title span { font-size: 0.85rem; letter-spacing: 4px; color: #b89564; text-transform: uppercase; margin-bottom: 15px; display: block; font-weight: 600; }
+        .concept-title h1 { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; letter-spacing: -2px; }
+        
+        .concept-meta { list-style: none; padding: 0; margin: 0; border-left: 1px solid #e0dcd3; padding-left: 25px; }
+        .concept-meta li { font-size: 0.95rem; color: #555; margin-bottom: 15px; letter-spacing: 0.5px;}
+        .concept-meta li strong { color: #111; font-weight: 500; margin-right: 5px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
+
+        .concept-desc { flex: 1.5; padding-top: 10px;}
+        .concept-desc h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 25px; font-style: italic; color: #b89564; }
+        .concept-desc p { font-size: 1.15rem; line-height: 2; color: #444; font-weight: 300; margin-bottom: 20px; text-align: justify; }
+        .concept-desc .thanks { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #111; font-style: italic; margin-top: 30px; display: block; text-align: right;}
+
+        /* 2. LƯỚI ẢNH MASONRY CHI TIẾT ALBUM */
+        .detail-gallery { padding: 0 5% 150px 5%; max-width: 1400px; margin: 0 auto; }
+        
+        .masonry-grid { column-count: 3; column-gap: 20px; }
+        .masonry-item { break-inside: avoid; margin-bottom: 20px; overflow: hidden; border-radius: 4px; background: #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05);}
+        .masonry-item img { width: 100%; display: block; filter: brightness(0.95); transition: transform 0.8s ease, filter 0.8s ease; cursor: pointer; }
+        .masonry-item:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { background-color: #f7f5f0; padding: 60px 0; text-align: center; border-top: 1px solid #e0dcd3; }
+        
+        .back-btn { text-align: center; margin-bottom: 100px; }
+        .back-btn a { display: inline-block; padding: 15px 40px; border: 1px solid #b89564; color: #b89564; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; transition: 0.3s; }
+        .back-btn a:hover { background: #b89564; color: #fff; }
+
+        @media (max-width: 992px) {
+            .concept-header { flex-direction: column; gap: 40px; }
+            .concept-title h1 { font-size: 3.5rem; }
+            .masonry-grid { column-count: 2; }
+            .concept-meta { border-left: none; border-top: 1px solid #e0dcd3; padding-left: 0; padding-top: 25px; }
+            .concept-desc .thanks { text-align: left; }
+        }
+        @media (max-width: 768px) { .masonry-grid { column-count: 1; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LỤC HỶ WEDDING</div>
+        
+        <!-- Nút 3 gạch (Hamburger Menu) -->
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <!-- LƯU Ý: Xóa class "active gold-text fw-bold" ở mục Dịch Vụ và chuyển sang mục tương ứng với trang hiện tại nhé -->
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li> 
+                <li class="dropdown">
+                    <!-- Hộp chứa bọc ngoài để tách chữ và icon -->
+                    <div class="menu-title-flex">
+                        <a href="dich-vu.html" id="services-dropdown">Dịch vụ</a>
+                        
+                        <!-- Khu vực bấm của icon được làm to ra bên phải -->
+                        <div id="dropdown-icon" class="icon-click-area">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <ul class="dropdown-menu">
+                        <li><a href="decor-cuoi.html">Decor Cưới</a></li>
+                        <li><a href="san-khau-cuoi.html">Sân Khấu Cưới</a></li>
+                        <li><a href="trang-tri-gia-tien.html">Trang Trí Gia Tiên</a></li>
+                        <li><a href="sinh-le-cuoi.html">Sính Lễ Cưới</a></li>
+                        <li><a href="cong-cuoi.html">Cổng Cưới</a></li>
+                    </ul>
+                </li>
+                <li><a href="album.html" class="active gold-text fw-bold">ALBUM</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="concept-header">
+        <div class="concept-title" data-aos="fade-right" data-aos-duration="1200">
+            <span>Trang Trí Gia Tiên</span>
+            <h1>Tone Màu <br> Cam Vàng</h1>
+            <ul class="concept-meta">
+                <li><strong>Cặp đôi:</strong> Quang Minh & Quỳnh Như</li>
+                <li><strong>Hạng mục:</strong> Lễ Tân Hôn</li>
+                <li><strong>Ngày tổ chức:</strong> 25.06.2023</li>
+            </ul>
+        </div>
+        <div class="concept-desc" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+            <h3>"Sự ấm áp và đầy tình cảm"</h3>
+            <p>Màu cam mang một ý nghĩa vui vẻ, ấm áp, đam mê đầy phấn khởi, sôi nổi nhưng đầy tình cảm, quyến rũ và thu hút. Ta thêm chút vàng vào cam tất có nghĩa là ta kết hợp chúng vào nhau tạo ra một màu khác nhẹ nhàng, thanh lịch, sang trọng hơn.</p>
+            <p>Hãy để Lục Hỷ trở thành người bạn đồng hành đáng tin cậy trong việc tạo nên không gian trang trọng và lãng mạn cho ngày cưới và mang đến cho bạn một trải nghiệm tuyệt vời và những kỷ niệm đáng nhớ suốt đời.</p>
+            <span class="thanks">Tʜᴀɴᴋs ғᴏʀ ᴄʜᴏᴏsɪɴɢ ᴜs!</span>
+        </div>
+    </section>
+
+    <section class="detail-gallery">
+        <div class="masonry-grid">
+            <div class="masonry-item" data-aos="fade-up"><img src="images/Album/vang2.jpg" alt="Cổng cưới Tân Hôn Tone Cam Vàng"></div>
+            <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="images/Album/vang1.jpg" alt="Backdrop Gia Tiên Quang Minh Quỳnh Như"></div>
+            <div class="masonry-item" data-aos="fade-up" data-aos-delay="200"><img src="images/Album/vang3.jpg" alt="Góc bàn họ Decor Tone Cam Vàng"></div>
+            <div class="masonry-item" data-aos="fade-up"><img src="images/Album/vang4.jpg" alt="Chi tiết hoa để bàn Tone Cam Vàng"></div>
+        </div>
+    </section>
+
+    <div class="back-btn" data-aos="zoom-in">
+        <a href="album.html">← Trở về Thư viện Album</a>
+    </div>
+
+    <!-- ================= KHỐI LIÊN HỆ CHUNG ================= -->
+    <section class="home-contact">
+        <div class="contact-wrapper">
+            <h2>Hãy để chúng tôi viết tiếp câu chuyện của bạn</h2>
+            
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <h4>Địa chỉ</h4>
+                    <p>123 Đường ABC, Quận X<br>TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Hotline</h4>
+                    <p>092 224 69 80</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p>hello@luchywedding.com</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1CNEzh7YvL/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a href="lien-he.html" class="btn-outline-gold" data-aos="fade-up" data-aos-delay="400">Trò chuyện với chúng tôi</a>
+            </div>
+        </div>
+    </section>
+    <!-- ================= END KHỐI LIÊN HỆ ================= -->
+
+    <!-- Thẻ footer gốc luôn nằm ở dưới cùng -->
+    <footer>
+        <p>© 2026 LỤC HỶ WEDDING STORYTELLER - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true, offset: 50 });</script>
+    <script>
+        // Xử lý Menu Mobile & Dropdown
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownIcon = document.getElementById('dropdown-icon');
+
+        if (mobileMenu && navMenu) {
+            // Nút 3 gạch chuyển thành dấu X
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                
+                const icon = mobileMenu.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times'); // Dấu X
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars'); // 3 Gạch
+                }
+            });
+        }
+
+        if (dropdown && dropdownIcon) {
+            // Nhấp vào mũi tên để mở/đóng menu con
+            dropdownIcon.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault(); 
+                    e.stopPropagation(); 
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    </script>
+<!-- ================= NÚT LIÊN HỆ NỔI (ZALO + GỌI) ================= -->
+    <div class="floating-contact">
+        <!-- Nút Zalo -->
+        <a href="https://zalo.me/0922246980" class="float-btn zalo-btn" target="_blank" rel="nofollow" title="Chat Zalo">
+            <span>Zalo</span>
+        </a>
+        
+        <!-- Nút Gọi Điện -->
+        <a href="tel:0922246980" class="float-btn call-btn" title="Gọi ngay">
+            <div class="ring-anim"></div>
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <!-- Nút Messenger -->
+        <a href="https://m.me/luchywedding" class="float-btn mess-btn" target="_blank" rel="nofollow" title="Chat Messenger">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+    </div>
+</body>
+</html>
